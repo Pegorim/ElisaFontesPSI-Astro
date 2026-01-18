@@ -1,52 +1,47 @@
 ---
 ---
 
-<section class="relative w-full h-[85vh] min-h-[600px] flex items-center bg-stone-100 overflow-hidden">
+<section class="relative w-full min-h-[500px] md:min-h-[550px]">
   <!-- Background Image -->
   <div class="absolute inset-0 z-0">
-    <img 
-      src="/images/hero-bg.jpg" 
-      alt="Consultório de terapia acolhedor" 
-      class="w-full h-full object-cover opacity-90"
+    <img
+      src="/images/hero-bg.jpg"
+      alt="Consultório de terapia acolhedor"
+      class="w-full h-full object-cover"
     />
-    <!-- Overlay Gradient -->
-    <div class="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent"></div>
   </div>
 
   <!-- Content Container -->
-  <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-    
-    <!-- Text Content -->
-    <div class="w-full md:w-2/3 lg:w-1/2">
-      <div class="bg-white/40 backdrop-blur-md p-8 md:p-12 rounded-2xl shadow-sm border border-white/50">
-        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl text-text-main font-bold leading-tight mb-6">
-          Preso em um ciclo de preocupações sem fim?
-        </h1>
-        <p class="text-lg md:text-xl text-text-main/80 leading-relaxed mb-8">
-          Encontre um espaço seguro para se reconectar consigo mesmo e construir uma vida com mais leveza e significado.
-        </p>
-        <div class="flex flex-wrap gap-4">
-            <a href="#contato" class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-sm tracking-wide uppercase bg-accent text-white hover:opacity-90 shadow-lg hover:shadow-xl hover:shadow-accent/20">
-                Agendar Conversa
-            </a>
-            <a href="/sobre" class="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer text-sm tracking-wide uppercase bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-white">
-                Saiba Mais
-            </a>
-        </div>
-      </div>
+  <div class="relative z-10 w-full h-full min-h-[500px] md:min-h-[550px] flex flex-col justify-between px-6 md:px-12 lg:px-20 py-8 md:py-12">
+
+    <!-- Top Left Text -->
+    <div class="max-w-md">
+      <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-text-main leading-tight">
+        Preso em um ciclo de preocupações sem fim?
+      </h1>
     </div>
 
-  </div>
+    <!-- Bottom Row: Profile Picture + Right Text -->
+    <div class="flex justify-between items-end">
 
-  <!-- Profile Picture - Positioned to overlap next section -->
-  <!-- We use absolute positioning relative to the section bottom-left -->
-  <div class="absolute -bottom-16 left-4 md:left-20 lg:left-32 z-20 hidden md:block">
-    <div class="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full border-4 border-white shadow-xl overflow-hidden">
-        <img 
-            src="/images/profile.jpg" 
-            alt="Elisa Fontes Psicóloga" 
+      <!-- Profile Picture - overlaps into nav below -->
+      <div class="relative z-30 -mb-20 md:-mb-16">
+        <div class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
+          <img
+            src="/images/profile.jpg"
+            alt="Elisa Fontes Psicóloga"
             class="w-full h-full object-cover"
-        />
+          />
+        </div>
+      </div>
+
+      <!-- Right Side CTA Text -->
+      <div class="text-right">
+        <p class="font-heading text-2xl md:text-3xl lg:text-4xl text-text-main leading-tight">
+          Agende sua<br />consulta!
+        </p>
+      </div>
+
     </div>
   </div>
 </section>

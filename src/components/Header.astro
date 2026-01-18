@@ -1,38 +1,25 @@
 ---
-import Button from './ui/Button.astro';
-
-const links = [
-  { text: "Home", href: "/" },
-  { text: "Sobre Mim", href: "/sobre" },
-  { text: "Blog", href: "#blog" },
-  { text: "Contato", href: "#contato" },
-];
 ---
 
-<header class="fixed w-full top-0 z-50 bg-transparent">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-      <!-- Logo -->
-      <a href="/" class="font-heading text-2xl font-bold text-accent tracking-tight">
-        Terapia com Elisa
-      </a>
+<nav class="relative z-20 bg-primary-bg py-4 px-6 md:px-12 lg:px-20">
+  <div class="flex items-center justify-center gap-6 md:gap-10 flex-wrap">
+    <!-- Main CTA Button -->
+    <a
+      href="#contato"
+      class="bg-text-main text-white px-6 py-3 rounded-sm font-medium hover:bg-text-main/90 transition-colors"
+    >
+      Agendar minha consulta
+    </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        {links.map(link => (
-          <a href={link.href} class="text-text-main hover:text-accent font-medium transition-colors text-sm uppercase tracking-wider">
-            {link.text}
-          </a>
-        ))}
-        <Button text="Agendar" href="#contato" class="px-6 py-2 text-xs" />
-      </nav>
-
-      <!-- Mobile Menu Button (Simple implementation) -->
-      <button class="md:hidden text-text-main focus:outline-none" aria-label="Menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
+    <!-- Navigation Links -->
+    <a href="/sobre" class="text-text-main underline hover:text-accent transition-colors">
+      Sobre Mim
+    </a>
+    <a href="#blog" class="text-text-main underline hover:text-accent transition-colors">
+      Blog
+    </a>
+    <a href="#contato" class="text-text-main underline hover:text-accent transition-colors">
+      Contato
+    </a>
   </div>
-</header>
+</nav>

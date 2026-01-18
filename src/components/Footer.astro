@@ -1,0 +1,40 @@
+---
+import Button from './ui/Button.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-primary-bg pt-16 border-t border-stone-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+      
+      <!-- CTA Section -->
+      <div class="flex flex-col items-center md:items-start gap-6 max-w-md text-center md:text-left">
+        <h2 class="font-heading text-3xl md:text-4xl text-text-main font-bold">
+            Pronto para iniciar sua jornada?
+        </h2>
+        <Button text="Agendar minha consulta" href="https://wa.me/5521999999999" class="px-10 py-4 text-base" />
+      </div>
+
+      <!-- Links -->
+      <div class="flex gap-8 text-text-main/80">
+        <a href="/sobre" class="hover:text-accent transition-colors">Sobre Mim</a>
+        <a href="#blog" class="hover:text-accent transition-colors">Blog</a>
+        <a href="#contato" class="hover:text-accent transition-colors">Contato</a>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="mt-16 pt-8 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-main/60">
+        <div class="flex gap-6">
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span> Online ou presencial
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-accent"></span> Todo o Brasil
+            </span>
+        </div>
+        <p>&copy; {year} Elisa Fontes. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>

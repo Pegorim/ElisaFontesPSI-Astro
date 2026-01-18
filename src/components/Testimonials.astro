@@ -1,0 +1,60 @@
+---
+const testimonials = [
+  {
+    text: "A Elisa me ajudou a enxergar padrões que eu repetia há anos. Hoje me sinto muito mais leve e confiante para tomar decisões.",
+    author: "Mariana S.",
+    role: "Paciente há 1 ano"
+  },
+  {
+    text: "O acolhimento que recebi desde a primeira sessão foi fundamental. Sinto que finalmente tenho um espaço onde posso ser eu mesmo.",
+    author: "Carlos E.",
+    role: "Paciente há 6 meses"
+  },
+  {
+    text: "A terapia online funcionou perfeitamente para mim. A Elisa é uma profissional excepcional e muito atenta.",
+    author: "Fernanda L.",
+    role: "Paciente há 2 anos"
+  }
+];
+---
+
+<section class="py-20 bg-white overflow-hidden">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-main mb-4">O que dizem meus pacientes</h2>
+      <div class="w-20 h-1 bg-accent mx-auto rounded-full opacity-30"></div>
+    </div>
+
+    <div class="space-y-12">
+      {testimonials.map((t, index) => (
+        <div class:list={[
+            "flex items-start gap-4 md:gap-6",
+            index % 2 === 1 ? "flex-row-reverse" : ""
+        ]}>
+          <!-- Avatar Placeholder -->
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-card-bg flex items-center justify-center text-text-main font-bold text-xl select-none">
+            {t.author.charAt(0)}
+          </div>
+          
+          <!-- Chat Bubble -->
+          <div class:list={[
+              "relative p-6 md:p-8 rounded-2xl max-w-lg shadow-sm",
+              "bg-card-bg text-text-main"
+          ]}>
+            <!-- Triangle indicator -->
+            <div class:list={[
+                "absolute top-6 w-4 h-4 bg-card-bg transform rotate-45",
+                index % 2 === 1 ? "-right-2" : "-left-2"
+            ]}></div>
+
+            <p class="text-lg italic mb-4 leading-relaxed">"{t.text}"</p>
+            <div class="flex flex-col">
+                <span class="font-bold font-heading">{t.author}</span>
+                <span class="text-xs opacity-60 uppercase tracking-widest">{t.role}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

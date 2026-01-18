@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-bg: #FDFbf7;
+  --color-card-bg: #E6DCCF;
+  --color-accent: #333399;
+  --color-text-main: #4A4036;
+  
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+}
+
+body {
+    background-color: var(--color-primary-bg);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+.font-heading {
+    font-family: var(--font-heading);
+}

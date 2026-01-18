@@ -8,7 +8,7 @@ interface Props {
 const { limit } = Astro.props;
 
 const allPosts = await getCollection('blog');
-const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const sortedPosts = allPosts.sort((a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const posts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
 
 // Helper to format date
@@ -35,7 +35,7 @@ const formatDate = (date: Date) => {
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {posts.map((post) => (
+      {posts.map((post: any) => (
         <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group">
             <!-- Image Placeholder if real image not available -->
             <div class="h-48 bg-card-bg relative overflow-hidden">

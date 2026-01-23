@@ -3,20 +3,38 @@ title: "Sobre Mim"
 description: "Conheça a trajetória de Elisa Fontes"
 ---
 
-## Minha Jornada
+## Olá, eu sou a Elisa
 
-Olá! Sou Elisa Fontes, psicóloga clínica apaixonada por ajudar pessoas a reencontrarem seu equilíbrio emocional. Minha trajetória na psicologia começou com um profundo interesse pelas histórias humanas e pela capacidade de resiliência que todos nós possuímos.
+Psicóloga clínica com abordagem em psicanálise, formada pela Universidade Estácio de Sá, RJ.
 
-Graduada em Psicologia, tenho dedicado minha carreira ao estudo e prática de abordagens que integram mente e corpo, buscando sempre um olhar humanizado e acolhedor para cada paciente que chega ao meu consultório.
+Estou aqui para te escutar e te ajudar. Quero saber o que você tem a dizer sobre suas angústias, medos e dificuldades. Meu trabalho é te dar a possibilidade de falar sobre o que te deixa em sofrimento, para que juntos possamos encontrar caminhos para uma vida com mais tranquilidade e paz.
+
+### Minha Trajetória
+
+Tenho experiência adquirida ao longo de mais de 30 anos de trabalho na ONG Comunidade S8, onde atuei como gestora de RH, coordenadora de projetos sociais e em clínica de dependência química.
+
+Essa trajetória me permitiu lidar com uma ampla variedade de pessoas e situações, desenvolvendo uma escuta atenta e um olhar humanizado para cada história que chega até mim.
 
 ### Abordagem Terapêutica
 
-Acredito que a terapia é um espaço sagrado de escuta e transformação. Utilizo uma abordagem integrativa, combinando técnicas da Terapia Cognitivo-Comportamental (TCC) com práticas de atenção plena (Mindfulness), permitindo que meus pacientes desenvolvam ferramentas práticas para lidar com a ansiedade, depressão e os desafios do dia a dia.
+Trabalho com a psicanálise, uma abordagem que entende a terapia como uma "cura pela palavra". Através da fala, você pode acessar conteúdos inconscientes, compreender padrões de comportamento e ressignificar experiências que causam sofrimento.
 
-> "A cura não significa que o dano nunca existiu. Significa que o dano não controla mais a sua vida."
+> "A psicanálise é indicada para quem busca compreender profundamente seus pensamentos, emoções e comportamentos."
 
-### Experiência
+### Para Quem é Indicado
 
-Ao longo dos anos, atendi centenas de pacientes, tanto presencialmente quanto online, ajudando-os a superar traumas, melhorar relacionamentos e construir uma autoestima sólida. Meu compromisso é oferecer um ambiente seguro, livre de julgamentos, onde você possa ser verdadeiramente você.
+A psicoterapia psicanalítica é indicada para pessoas que enfrentam:
 
-Se você sente que é hora de cuidar de si mesmo e quebrar ciclos que não te servem mais, estou aqui para caminhar ao seu lado nessa jornada.
+- Ansiedade e crises de pânico
+- Depressão e tristeza persistente
+- Dificuldades em relacionamentos
+- Baixa autoestima
+- Traumas e conflitos não resolvidos
+- Crises existenciais
+- Dependência química
+
+### Atendimento
+
+Ofereço atendimento presencial em Niterói, RJ, e também online para todo o Brasil. O formato online permite que você faça suas sessões de onde estiver, com a mesma qualidade e acolhimento do atendimento presencial.
+
+Se você sente que é hora de cuidar de si mesmo, estou aqui para caminhar ao seu lado nessa jornada.

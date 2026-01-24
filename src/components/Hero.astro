@@ -14,24 +14,13 @@
   <!-- Content Container -->
   <div class="relative z-10 w-full h-full min-h-[500px] md:min-h-[550px] flex flex-col justify-between px-6 md:px-12 lg:px-20 py-8 md:py-12">
 
-    <!-- Bottom Row: Profile Picture + H1 + Right Text -->
+    <!-- Bottom Row: H1 + WhatsApp + Profile Picture -->
     <div class="flex justify-between items-end mt-auto">
 
-      <!-- Profile Picture + H1 -->
-      <div class="flex items-end gap-4 md:gap-6">
-        <!-- Profile Picture - overlaps into nav below -->
-        <div class="relative z-30 -mb-20 md:-mb-16">
-        <div class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
-          <img
-            src="/images/profile.jpg"
-            alt="Elisa Fontes Psicóloga"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
+      <!-- H1 with WhatsApp button below -->
+      <div class="mb-16 md:mb-12">
         <!-- H1 with transparent box -->
-        <div class="bg-white/70 backdrop-blur-sm px-4 py-3 md:px-6 md:py-4 rounded-lg mb-24 md:mb-20">
+        <div class="bg-white/70 backdrop-blur-sm px-4 py-3 md:px-6 md:py-4 rounded-lg">
           <h1 class="font-heading text-2xl md:text-3xl lg:text-4xl text-text-main leading-tight">
             Elisa Fontes | Psicóloga em Niterói
           </h1>
@@ -39,18 +28,29 @@
             <span class="font-medium text-accent">38 anos cuidando de pessoas</span> · CRP 05/62794
           </p>
         </div>
+
+        <!-- WhatsApp button below text -->
+        <div class="mt-4">
+          <a
+            href="https://wa.me/5521987449887"
+            aria-label="Chat no WhatsApp"
+            class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-medium rounded-full transition-colors"
+          >
+            <img src="/images/whatsapp-icon.svg" alt="" class="w-5 h-5 invert" />
+            Vamos conversar?
+          </a>
+        </div>
       </div>
 
-      <!-- Right Side CTA -->
-      <div class="text-right mb-16 md:mb-12">
-        <a
-          href="https://wa.me/5521987449887"
-          aria-label="Chat no WhatsApp"
-          class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-medium rounded-full transition-colors"
-        >
-          <img src="/images/whatsapp-icon.svg" alt="" class="w-5 h-5 invert" />
-          Vamos conversar?
-        </a>
+      <!-- Profile Picture - right side, overlaps into nav below -->
+      <div class="relative z-30 -mb-20 md:-mb-16">
+        <div class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
+          <img
+            src="/images/profile.jpg"
+            alt="Elisa Fontes Psicóloga"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
     </div>

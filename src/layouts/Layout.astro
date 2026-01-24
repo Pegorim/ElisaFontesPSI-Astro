@@ -18,16 +18,23 @@ const imageURL = new URL(image, Astro.site);
 
 const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Terapia com Elisa",
-    "description": description,
+    "@type": "Physician",
+    "name": "Elisa Fontes",
+    "givenName": "Elisa",
+    "familyName": "Fontes",
+    "jobTitle": "Psicóloga Clínica",
+    "medicalSpecialty": "Psychology",
+    "description": "Psicóloga clínica em Niterói com 38 anos de experiência em psicanálise. Atendimento presencial e online.",
     "url": "https://elisafontes.com.br",
-    "telephone": "+5521987449887",
+    "telephone": "+55-21-98744-9887",
+    "email": "psi.elisafontes@gmail.com",
     "image": imageURL.href,
     "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Niterói",
-        "addressRegion": "RJ",
+        "streetAddress": "Rua Tupiniquins 93",
+        "addressLocality": "São Francisco",
+        "addressRegion": "Niterói, RJ",
+        "postalCode": "24360-400",
         "addressCountry": "BR"
     },
     "geo": {
@@ -35,14 +42,9 @@ const structuredData = {
         "latitude": -22.8833,
         "longitude": -43.1036
     },
-    "provider": {
-        "@type": "Person",
-        "name": "Elisa Fontes",
-        "jobTitle": "Psicóloga Clínica",
-        "sameAs": [
-            "https://www.instagram.com/elisa12fontes"
-        ]
-    },
+    "sameAs": [
+        "https://www.instagram.com/elisa12fontes"
+    ],
     "areaServed": [
         {
             "@type": "City",
@@ -53,7 +55,12 @@ const structuredData = {
             "name": "Brasil"
         }
     ],
-    "serviceType": ["Psicoterapia", "Terapia Online", "Psicologia Clínica"]
+    "knowsAbout": ["Psicanálise", "Ansiedade", "Depressão", "Terapia Online", "Psicologia Clínica"],
+    "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Professional License",
+        "name": "CRP 05/62794"
+    }
 };
 ---
 

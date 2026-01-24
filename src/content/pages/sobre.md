@@ -53,7 +53,7 @@ A psicoterapia psicanalítica é indicada para pessoas que enfrentam:
 
 Ofereço atendimento presencial em Niterói, RJ, e também online para todo o Brasil. O formato online permite que você faça suas sessões de onde estiver, com a mesma qualidade e acolhimento do atendimento presencial.
 
-**Consultório:** Rua Tupiniquins 93, São Francisco, Niterói, RJ
+**Consultório:** Rua Rui Barbosa, 29 - Sala 213, Niterói, RJ
 
 **Horário de Atendimento:** Segunda a Sábado, das 10h às 20h
 

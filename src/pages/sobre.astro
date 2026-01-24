@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BlogGrid from '../components/BlogGrid.astro';
+import Testimonials from '../components/Testimonials.astro';
 import { getEntry } from 'astro:content';
 
 const entry = await getEntry('pages', 'sobre');
@@ -86,6 +87,19 @@ const { Content } = await entry.render();
         </div>
     </div>
     
+    <!-- Testimonials Section -->
+    <section class="border-t border-stone-200 pt-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <h2 class="font-heading text-3xl md:text-4xl text-text-main text-center mb-4">
+          O que dizem meus pacientes
+        </h2>
+        <p class="text-text-main/60 text-center">
+          Depoimentos de quem já passou pela terapia comigo
+        </p>
+      </div>
+      <Testimonials />
+    </section>
+
     <!-- Blog Section on About Page -->
     <div class="border-t border-stone-200">
         <BlogGrid limit={3} />

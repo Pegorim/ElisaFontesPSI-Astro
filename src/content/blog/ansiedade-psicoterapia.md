@@ -3,7 +3,7 @@ title: "Como a Psicoterapia Ajuda no Tratamento da Ansiedade"
 description: "Entenda como a terapia funciona no tratamento da ansiedade, o que esperar das sessões e por que a psicoterapia é considerada o tratamento de primeira escolha."
 pubDate: 2025-01-22
 category: "ANSIEDADE"
-image: "/images/blog-ansiedade.jpg"
+image: "/images/blog-terapia.jpg"
 ---
 
 "Será que terapia funciona mesmo?"

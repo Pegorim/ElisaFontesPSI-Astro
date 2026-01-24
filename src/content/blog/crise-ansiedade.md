@@ -3,7 +3,7 @@ title: "Estou Tendo Uma Crise de Ansiedade: E Agora?"
 description: "Aprenda técnicas práticas para se acalmar durante uma crise de ansiedade. Respiração, grounding e o que fazer (e não fazer) no momento da crise."
 pubDate: 2025-01-22
 category: "ANSIEDADE"
-image: "/images/blog-ansiedade.jpg"
+image: "/images/blog-crise.jpg"
 ---
 
 Se você está lendo isso no meio de uma crise, pare um momento.

@@ -3,7 +3,7 @@ title: "Sintomas Físicos da Ansiedade: Como o Corpo Reage"
 description: "Descubra como a ansiedade se manifesta no corpo: coração acelerado, falta de ar, tensão muscular e outros sintomas que você pode não relacionar com a mente."
 pubDate: 2025-01-22
 category: "ANSIEDADE"
-image: "/images/blog-ansiedade.jpg"
+image: "/images/blog-conversa.jpg"
 ---
 
 Coração disparado. Mãos suadas. Sensação de que não consegue respirar direito. Você já sentiu isso e pensou que havia algo errado com seu corpo?

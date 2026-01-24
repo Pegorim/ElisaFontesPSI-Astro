@@ -3,7 +3,7 @@ title: "Como fortalecer sua Autoestima"
 description: "Dicas práticas para desenvolver uma relação mais saudável consigo mesmo."
 pubDate: 2024-03-15
 category: "AUTOESTIMA"
-image: "/images/blog-autoestima.jpg"
+image: "/images/blog-ajuda.jpg"
 ---
 
 A autoestima é a base da nossa saúde mental. Quando ela está fragilizada, tudo ao nosso redor parece mais difícil. Mas a boa notícia é que a autoestima é como um músculo: pode ser fortalecida com a prática diária.

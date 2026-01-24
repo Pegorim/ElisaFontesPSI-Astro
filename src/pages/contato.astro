@@ -2,11 +2,34 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+// ContactPage schema
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contato | Elisa Fontes - Psicóloga",
+  "description": "Entre em contato com Elisa Fontes. Atendimento presencial em Niterói e online para todo o Brasil.",
+  "url": "https://elisafontes.com.br/contato",
+  "mainEntity": {
+    "@type": "Physician",
+    "name": "Elisa Fontes",
+    "telephone": "+55-21-98744-9887",
+    "email": "psi.elisafontes@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Rui Barbosa, 29 - Sala 213",
+      "addressLocality": "Niterói",
+      "addressRegion": "RJ",
+      "addressCountry": "BR"
+    }
+  }
+};
 ---
 
 <Layout
   title="Contato | Elisa Fontes - Psicóloga em Niterói"
   description="Entre em contato com Elisa Fontes. Atendimento presencial em Niterói e online para todo o Brasil."
+  schema={contactSchema}
 >
   <Header />
 

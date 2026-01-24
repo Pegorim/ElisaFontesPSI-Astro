@@ -5,18 +5,20 @@ interface Props {
 	title: string;
     description?: string;
     image?: string;
+    schema?: object;
 }
 
 const {
     title,
     description = "Elisa Fontes, psicóloga clínica em Niterói, RJ. Atendimento presencial e online. Agende sua consulta e comece sua jornada de autoconhecimento.",
-    image = "/images/profile.jpg"
+    image = "/images/profile.jpg",
+    schema
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
 
-const structuredData = {
+const defaultSchema = {
     "@context": "https://schema.org",
     "@type": "Physician",
     "name": "Elisa Fontes",
@@ -62,6 +64,8 @@ const structuredData = {
         "name": "CRP 05/62794"
     }
 };
+
+const structuredData = schema || defaultSchema;
 ---
 
 <!doctype html>

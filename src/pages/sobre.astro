@@ -10,9 +10,41 @@ const entry = await getEntry('pages', 'sobre');
 if (!entry) throw new Error('Could not find about page content');
 
 const { Content } = await entry.render();
+
+// AboutPage schema
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Sobre Mim | Elisa Fontes - Psicóloga",
+  "description": entry.data.description,
+  "url": "https://elisafontes.com.br/sobre",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Elisa Fontes",
+    "jobTitle": "Psicóloga Clínica",
+    "description": "Psicóloga clínica com 38 anos de experiência cuidando de pessoas. Formada pela Universidade Estácio de Sá, RJ.",
+    "knowsAbout": ["Psicanálise", "Ansiedade", "Depressão", "Autoestima", "Terapia Online"],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional License",
+      "name": "CRP 05/62794"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Consultório Elisa Fontes",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Rui Barbosa, 29 - Sala 213",
+        "addressLocality": "Niterói",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      }
+    }
+  }
+};
 ---
 
-<Layout title="Sobre Mim | Terapia com Elisa">
+<Layout title="Sobre Mim | Terapia com Elisa" schema={aboutSchema}>
   <Header />
 
   <main class="pt-20">

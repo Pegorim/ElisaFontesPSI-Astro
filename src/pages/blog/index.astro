@@ -6,11 +6,33 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Blog schema
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog | Elisa Fontes - Psicóloga",
+  "description": "Artigos sobre ansiedade, autoestima, autoconhecimento e saúde mental.",
+  "url": "https://elisafontes.com.br/blog",
+  "author": {
+    "@type": "Person",
+    "name": "Elisa Fontes",
+    "jobTitle": "Psicóloga Clínica"
+  },
+  "blogPost": sortedPosts.slice(0, 10).map(post => ({
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "datePublished": post.data.pubDate.toISOString(),
+    "url": `https://elisafontes.com.br/blog/${post.id.replace(/\.md$/, '')}`
+  }))
+};
 ---
 
 <Layout
   title="Blog | Elisa Fontes - Psicóloga em Niterói"
   description="Artigos sobre ansiedade, autoestima, autoconhecimento e saúde mental. Conteúdo escrito por Elisa Fontes, psicóloga clínica."
+  schema={blogSchema}
 >
   <Header />
 

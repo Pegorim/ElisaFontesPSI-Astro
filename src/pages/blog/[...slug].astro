@@ -20,12 +20,43 @@ const formattedDate = post.data.pubDate.toLocaleDateString('pt-BR', {
   month: 'long',
   year: 'numeric',
 });
+
+// Article schema for blog posts
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "image": post.data.image ? `https://elisafontes.com.br${post.data.image}` : "https://elisafontes.com.br/images/profile.jpg",
+  "datePublished": post.data.pubDate.toISOString(),
+  "dateModified": post.data.pubDate.toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": "Elisa Fontes",
+    "jobTitle": "Psicóloga Clínica",
+    "url": "https://elisafontes.com.br/sobre"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Elisa Fontes - Psicóloga",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://elisafontes.com.br/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://elisafontes.com.br/blog/${post.id.replace(/\.md$/, '')}`
+  },
+  "articleSection": post.data.category
+};
 ---
 
 <Layout
   title={`${post.data.title} | Elisa Fontes - Psicóloga`}
   description={post.data.description}
   image={post.data.image}
+  schema={articleSchema}
 >
   <Header />
 

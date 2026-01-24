@@ -1,6 +1,6 @@
 ---
 title: "Sobre Mim"
-description: "Conheça a trajetória de Elisa Fontes, psicóloga clínica com mais de 30 anos de experiência"
+description: "Conheça a trajetória de Elisa Fontes, psicóloga clínica com 38 anos cuidando de pessoas"
 ---
 
 ## Olá, eu sou a Elisa

@@ -1,0 +1,26 @@
+---
+interface Props {
+  label?: string;
+  className?: string;
+  showIcon?: boolean;
+}
+
+const {
+  label = 'Agendar pelo WhatsApp',
+  className = '',
+  showIcon = true,
+} = Astro.props;
+
+const phone = '5521987449887';
+const message = 'Olá, Elisa! Vim pelo seu site e gostaria de agendar uma sessão.';
+const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}&utm_source=site&utm_medium=cta&utm_campaign=whatsapp`;
+---
+
+<a
+  href={href}
+  aria-label="Chat no WhatsApp"
+  class={`inline-flex items-center gap-2 ${className}`}
+>
+  {showIcon && <img src="/images/whatsapp-icon.svg" alt="" class="w-5 h-5 invert" />}
+  <span>{label}</span>
+</a>

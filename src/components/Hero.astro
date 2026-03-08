@@ -1,4 +1,5 @@
 ---
+import WhatsAppButton from './WhatsAppButton.astro';
 ---
 
 <section class="relative w-full min-h-[500px] md:min-h-[550px]">
@@ -31,14 +32,10 @@
 
         <!-- WhatsApp button below text -->
         <div class="mt-4">
-          <a
-            href="https://wa.me/5521987449887"
-            aria-label="Chat no WhatsApp"
-            class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-medium rounded-full transition-colors"
-          >
-            <img src="/images/whatsapp-icon.svg" alt="" class="w-5 h-5 invert" />
-            Vamos conversar?
-          </a>
+          <WhatsAppButton
+            label="Vamos conversar?"
+            className="px-5 py-2.5 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-medium rounded-full transition-colors"
+          />
         </div>
       </div>
 

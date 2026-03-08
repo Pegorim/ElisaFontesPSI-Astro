@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Página não encontrada | Elisa Fontes">
+  <Header />
+
+  <main class="bg-primary-bg px-6 md:px-12 lg:px-20 py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-heading text-text-main mb-4">
+        Página não encontrada
+      </h1>
+      <p class="text-text-main/70 mb-8">
+        A página que você tentou acessar não existe. Se quiser, fale comigo no WhatsApp e eu te ajudo.
+      </p>
+      <a
+        href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o.&utm_source=site&utm_medium=cta&utm_campaign=whatsapp"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-full font-medium hover:bg-[#1ebe5b] transition-colors"
+      >
+        <img src="/images/whatsapp-icon.svg" alt="" class="w-5 h-5 invert" />
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

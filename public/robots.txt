@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://elisafontes.com.br/sitemap-index.xml

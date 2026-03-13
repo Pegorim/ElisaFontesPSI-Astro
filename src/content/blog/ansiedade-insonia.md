@@ -164,6 +164,8 @@ Em alguns casos, medicamentos podem ser indicados temporariamente por um médico
 
 Dormir bem não é luxo — é necessidade. A ansiedade pode ter roubado suas noites, mas é possível recuperá-las. Com as estratégias certas e, se necessário, ajuda profissional, você pode voltar a ter noites tranquilas e dias mais leves.
 
+Se você está em Niterói ou no Rio de Janeiro e a insônia causada pela ansiedade está prejudicando sua qualidade de vida, Elisa Fontes pode ajudar — presencialmente no Centro de Niterói ou online.
+
 ---
 
 *Este conteúdo tem caráter informativo e educacional, não substituindo a avaliação e o acompanhamento de um profissional de saúde mental. Se você está enfrentando dificuldades, procure ajuda especializada.*

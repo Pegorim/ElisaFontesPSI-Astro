@@ -182,6 +182,8 @@ Crises de ansiedade são assustadoras, mas tratáveis. Com o acompanhamento adeq
 
 Se você tem crises frequentes, procure um psicólogo. Buscar ajuda é um ato de coragem, não de fraqueza.
 
+Se você está em Niterói ou no Rio de Janeiro e quer um acompanhamento especializado para as crises de ansiedade, Elisa Fontes atende presencialmente no Centro de Niterói e online para todo o Brasil.
+
 ---
 
 *Este conteúdo tem caráter informativo e educacional, não substituindo a avaliação e o acompanhamento de um profissional de saúde mental. Se você está enfrentando dificuldades, procure ajuda especializada. Em caso de emergência, ligue para o SAMU (192) ou CVV (188).*

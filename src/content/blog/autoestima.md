@@ -15,3 +15,5 @@ Pare de se julgar com tanta severidade. Trate-se com a mesma gentileza que você
 ## 2. Reconheça suas Conquistas
 
 Muitas vezes focamos apenas no que falta, esquecendo de celebrar o que já alcançamos. Faça uma lista diária de pequenas vitórias.
+
+Se você mora em Niterói ou no Rio de Janeiro e sente que trabalhar a autoestima em terapia pode mudar sua relação consigo mesmo, Elisa Fontes atende presencialmente no Centro de Niterói e online para todo o Brasil.

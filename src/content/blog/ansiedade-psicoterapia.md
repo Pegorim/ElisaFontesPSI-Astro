@@ -166,6 +166,8 @@ A ansiedade pode ter tomado conta da sua vida, mas isso não precisa ser permane
 
 Se você está considerando começar terapia, já deu o passo mais difícil: admitir que precisa de apoio. O próximo passo é marcar sua primeira consulta.
 
+Se você é de Niterói ou do Rio de Janeiro, Elisa Fontes atende de forma presencial no Centro de Niterói e online para todo o Brasil. Entre em contato e agende uma conversa inicial.
+
 ---
 
 *Este conteúdo tem caráter informativo e educacional, não substituindo a avaliação e o acompanhamento de um profissional de saúde mental. Se você está enfrentando dificuldades, procure ajuda especializada.*

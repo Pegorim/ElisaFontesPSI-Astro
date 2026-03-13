@@ -20,7 +20,7 @@ const imageURL = new URL(image, Astro.site);
 
 const defaultSchema = {
     "@context": "https://schema.org",
-    "@type": "Physician",
+    "@type": ["Psychologist", "LocalBusiness"],
     "name": "Elisa Fontes",
     "givenName": "Elisa",
     "familyName": "Fontes",
@@ -44,6 +44,10 @@ const defaultSchema = {
         "latitude": -22.8833,
         "longitude": -43.1036
     },
+    "openingHours": ["Mo-Sa 10:00-20:00"],
+    "priceRange": "$$",
+    "currenciesAccepted": "BRL",
+    "paymentAccepted": "Dinheiro, PIX, Transferência",
     "sameAs": [
         "https://www.instagram.com/elisa12fontes"
     ],

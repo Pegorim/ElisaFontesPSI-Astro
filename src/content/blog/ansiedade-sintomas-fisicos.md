@@ -160,7 +160,7 @@ Entenda melhor [como a psicoterapia pode ajudar](/blog/ansiedade-psicoterapia) n
 
 Você não precisa conviver com esses sintomas. Com o tratamento adequado, é possível reduzir significativamente as manifestações físicas da ansiedade e recuperar sua qualidade de vida.
 
-Se você mora em Niterói ou na região e quer entender melhor o que seu corpo está tentando comunicar, Elisa Fontes oferece atendimento psicanalítico presencial no Centro de Niterói e online para todo o Brasil.
+Se você mora em Niterói ou na região e quer entender melhor o que seu corpo está tentando comunicar, Elisa Fontes oferece atendimento psicanalítico presencial em São Francisco, Niterói e online para todo o Brasil.
 
 ---
 

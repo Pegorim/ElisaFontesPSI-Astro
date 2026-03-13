@@ -136,7 +136,7 @@ A psicoterapia pode ajudar a entender a origem da sua ansiedade, identificar pad
 
 Não espere chegar ao esgotamento total. Cuidar da sua saúde mental é tão importante quanto cuidar da sua carreira — na verdade, um depende do outro.
 
-Se você mora em Niterói ou trabalha na região e está sentindo os efeitos do estresse ocupacional, Elisa Fontes oferece atendimento presencial no Centro de Niterói e online para todo o Brasil.
+Se você mora em Niterói ou trabalha na região e está sentindo os efeitos do estresse ocupacional, Elisa Fontes oferece atendimento presencial em São Francisco, Niterói e online para todo o Brasil.
 
 ---
 

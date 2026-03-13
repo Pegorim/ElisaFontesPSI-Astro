@@ -79,9 +79,9 @@ Ambas as modalidades são reconhecidas pelo Conselho Federal de Psicologia (CFP)
 
 Com 38 anos de experiência na área de saúde mental, Elisa Fontes é psicóloga clínica registrada no CRP-RJ (CRP 05/62794), com formação em psicanálise. Atende adultos e adolescentes a partir de 16 anos.
 
-O consultório fica no Centro de Niterói, de fácil acesso pela região central da cidade:
+O consultório fica em São Francisco, Niterói:
 
-**Rua Rui Barbosa, 29 - Sala 213, Centro, Niterói - RJ**
+**Rua Rui Barbosa, 29 - Sala 213, São Francisco, Niterói - RJ**
 Segunda a sábado, das 10h às 20h
 
 Também realiza atendimento online para todo o Brasil.

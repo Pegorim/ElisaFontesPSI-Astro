@@ -170,7 +170,7 @@ Procure um psicólogo ou psiquiatra se você:
 
 Buscar ajuda não é sinal de fraqueza. É o primeiro passo para retomar o controle da sua vida e viver com mais leveza.
 
-Se você está em Niterói ou no Rio de Janeiro e quer dar esse passo, Elisa Fontes atende de forma presencial no Centro de Niterói (Rua Rui Barbosa, 29 - Sala 213) e online para todo o Brasil.
+Se você está em Niterói ou no Rio de Janeiro e quer dar esse passo, Elisa Fontes atende de forma presencial em São Francisco, Niterói (Rua Rui Barbosa, 29 - Sala 213) e online para todo o Brasil.
 
 ---
 

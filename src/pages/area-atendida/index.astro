@@ -9,7 +9,7 @@ const pageSchema = {
   "@type": ["Psychologist", "LocalBusiness"],
   "name": "Elisa Fontes - Psicóloga em Niterói",
   "description": "Psicóloga clínica com 38 anos de experiência. Atendimento presencial em São Francisco, Niterói, e online para todo o Brasil.",
-  "url": "https://elisafontes.com.br/localizacao",
+  "url": "https://elisafontes.com.br/area-atendida",
   "telephone": "+55-21-98744-9887",
   "address": {
     "@type": "PostalAddress",
@@ -40,7 +40,7 @@ const pageSchema = {
         </h1>
         <p class="text-text-main/70 text-lg max-w-2xl mx-auto mb-8">
           Elisa Fontes atende pacientes de todos os bairros de Niterói. Consultório presencial em
-          <a href="/localizacao/sao-francisco" class="text-accent underline hover:opacity-80">São Francisco</a>
+          <a href="/area-atendida/sao-francisco" class="text-accent underline hover:opacity-80">São Francisco</a>
           e atendimento online para todo o Brasil.
         </p>
         <a
@@ -62,7 +62,7 @@ const pageSchema = {
             <p class="text-text-main/70 text-sm mb-1">Rua Rui Barbosa, 29 - Sala 213</p>
             <p class="text-text-main/70 text-sm mb-1">São Francisco, Niterói - RJ</p>
             <p class="text-text-main/70 text-sm mb-3">Segunda a sábado, 10h às 20h</p>
-            <a href="/localizacao/sao-francisco" class="text-accent text-sm underline hover:opacity-80">
+            <a href="/area-atendida/sao-francisco" class="text-accent text-sm underline hover:opacity-80">
               Ver página do bairro →
             </a>
           </div>
@@ -92,7 +92,7 @@ const pageSchema = {
             <div class="flex flex-wrap gap-3">
               {getBairrosByRegiao(regiao).map((bairro) => (
                 <a
-                  href={`/localizacao/${bairro.slug}`}
+                  href={`/area-atendida/${bairro.slug}`}
                   class="px-4 py-2 bg-white border border-stone-200 rounded-sm text-text-main text-sm hover:border-accent hover:text-accent transition-colors"
                 >
                   {bairro.name}

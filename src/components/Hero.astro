@@ -2,54 +2,72 @@
 import WhatsAppButton from './WhatsAppButton.astro';
 ---
 
-<section class="relative w-full min-h-[500px] md:min-h-[550px]">
-  <!-- Background Image -->
+<section class="relative isolate overflow-hidden bg-[#f7efe7]">
   <div class="absolute inset-0 z-0">
     <img
       src="/images/hero-bg.jpg"
-      alt="Consultório de terapia acolhedor"
-      class="w-full h-full object-cover"
+      alt="Ambiente acolhedor para atendimento psicológico"
+      class="h-full w-full object-cover opacity-25"
     />
+    <div class="absolute inset-0 bg-gradient-to-r from-[#fdfbf7] via-[#fdfbf7]/95 to-[#fdfbf7]/70"></div>
   </div>
 
-  <!-- Content Container -->
-  <div class="relative z-10 w-full h-full min-h-[500px] md:min-h-[550px] flex flex-col justify-between px-6 md:px-12 lg:px-20 py-8 md:py-12">
+  <div class="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 py-16 md:px-12 lg:grid-cols-[1.2fr_0.8fr] lg:px-20 lg:py-24">
+    <div class="max-w-2xl">
+      <span class="mb-4 inline-flex rounded-full bg-white/80 px-4 py-2 text-sm text-text-main shadow-sm ring-1 ring-black/5">
+        Atendimento online para todo o Brasil · Presencial em Niterói
+      </span>
 
-    <!-- Bottom Row: H1 + WhatsApp + Profile Picture -->
-    <div class="flex justify-between items-end mt-auto">
+      <h1 class="font-heading text-4xl leading-tight text-text-main md:text-5xl lg:text-6xl">
+        Psicóloga em Niterói para quem precisa de um espaço seguro para cuidar da mente.
+      </h1>
 
-      <!-- H1 with WhatsApp button below -->
-      <div class="mb-16 md:mb-12">
-        <!-- H1 with transparent box -->
-        <div class="bg-white/70 backdrop-blur-sm px-4 py-3 md:px-6 md:py-4 rounded-lg">
-          <h1 class="font-heading text-2xl md:text-3xl lg:text-4xl text-text-main leading-tight">
-            Elisa Fontes | Psicóloga em Niterói
-          </h1>
-          <p class="text-sm text-text-main/70 mt-1">
-            <span class="font-medium text-accent">38 anos cuidando de pessoas</span> · CRP 05/62794
-          </p>
-        </div>
+      <p class="mt-6 text-lg leading-8 text-text-main/80 md:text-xl">
+        Elisa Fontes oferece psicoterapia com escuta acolhedora, profundidade e experiência clínica.
+        Um atendimento pensado para adultos e adolescentes a partir de 16 anos que estão lidando com
+        ansiedade, sobrecarga emocional, conflitos internos e momentos de mudança.
+      </p>
 
-        <!-- WhatsApp button below text -->
-        <div class="mt-4">
-          <WhatsAppButton
-            label="Vamos conversar?"
-            className="px-5 py-2.5 bg-[#25D366] hover:bg-[#1ebe5b] text-white font-medium rounded-full transition-colors"
-          />
-        </div>
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+        <WhatsAppButton
+          label="Agendar pelo WhatsApp"
+          className="justify-center rounded-full bg-[#25D366] px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-[#1ebe5b]"
+        />
+        <a
+          href="/contato"
+          class="inline-flex items-center justify-center rounded-full border border-text-main/20 bg-white px-6 py-4 text-base font-medium text-text-main transition-colors hover:border-accent hover:text-accent"
+        >
+          Ver formas de atendimento
+        </a>
       </div>
 
-      <!-- Profile Picture - right side, overlaps into nav below -->
-      <div class="relative z-30 -mb-24 md:-mb-20">
-        <div class="w-40 h-40 md:w-52 md:h-52 lg:w-64 lg:h-64 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
+      <ul class="mt-8 grid gap-3 text-sm text-text-main/80 md:grid-cols-3 md:text-base">
+        <li class="rounded-2xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-black/5">CRP 05/62794</li>
+        <li class="rounded-2xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-black/5">38 anos cuidando de pessoas</li>
+        <li class="rounded-2xl bg-white/80 px-4 py-3 shadow-sm ring-1 ring-black/5">Sessões online e presenciais</li>
+      </ul>
+    </div>
+
+    <div class="flex items-center justify-center lg:justify-end">
+      <div class="max-w-md rounded-[2rem] bg-white/85 p-5 shadow-2xl ring-1 ring-black/5 backdrop-blur-sm">
+        <div class="overflow-hidden rounded-[1.5rem] bg-card-bg">
           <img
             src="/images/profile.jpg"
-            alt="Elisa Fontes Psicóloga"
-            class="w-full h-full object-cover"
+            alt="Elisa Fontes, psicóloga clínica"
+            class="aspect-[4/5] w-full object-cover"
           />
         </div>
-      </div>
 
+        <div class="px-2 pb-2 pt-5">
+          <p class="font-heading text-2xl text-text-main">Elisa Fontes</p>
+          <p class="mt-2 text-text-main/75">
+            Psicóloga clínica com abordagem em psicanálise, atendimento humanizado e foco em escuta real.
+          </p>
+          <div class="mt-4 rounded-2xl bg-primary-bg px-4 py-3 text-sm text-text-main/80">
+            Primeiros passos com leveza: você chama no WhatsApp, conta brevemente o que está vivendo e recebe orientação sobre o atendimento.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

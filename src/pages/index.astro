@@ -4,15 +4,124 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCards from '../components/ServiceCards.astro';
 import Testimonials from '../components/Testimonials.astro';
+import BlogGrid from '../components/BlogGrid.astro';
 import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const faqItems = [
+  {
+    question: 'Como funciona o primeiro contato?',
+    answer:
+      'Você pode chamar pelo WhatsApp, contar brevemente o que está vivendo e receber orientação sobre formato, disponibilidade e próximos passos.'
+  },
+  {
+    question: 'O atendimento é online ou presencial?',
+    answer:
+      'Os dois. Elisa atende presencialmente em Niterói e também oferece sessões online para pacientes de todo o Brasil.'
+  },
+  {
+    question: 'Quem pode fazer terapia com Elisa?',
+    answer:
+      'Adultos e adolescentes a partir de 16 anos que estejam buscando acompanhamento psicológico com escuta acolhedora e aprofundamento emocional.'
+  }
+];
 ---
 
-<Layout title="Elisa Fontes | Psicóloga em Niterói - Terapia Online e Presencial">
+<Layout
+  title="Elisa Fontes | Psicóloga em Niterói - Terapia online e presencial"
+  description="Psicóloga clínica em Niterói com atendimento online e presencial. Agende sua consulta com Elisa Fontes e encontre um espaço seguro para cuidar da sua saúde mental."
+>
 	<main>
 		<Hero />
 		<Header />
 		<ServiceCards />
+
+    <section class="bg-stone-50 px-6 py-16 md:px-12 lg:px-20 lg:py-20">
+      <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent/80">Por que escolher a Elisa</p>
+          <h2 class="mt-3 font-heading text-3xl text-text-main md:text-4xl">
+            Um atendimento sério, humano e acolhedor.
+          </h2>
+          <p class="mt-5 text-lg leading-8 text-text-main/75">
+            Sem promessas vazias. O foco é oferecer escuta qualificada, profundidade clínica e um ambiente seguro para trabalhar o que hoje pesa demais.
+          </p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2">
+          <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+            <h3 class="font-heading text-2xl text-text-main">Experiência clínica</h3>
+            <p class="mt-3 text-text-main/75 leading-7">38 anos cuidando de pessoas, com escuta madura e presença constante no processo terapêutico.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+            <h3 class="font-heading text-2xl text-text-main">Presencial e online</h3>
+            <p class="mt-3 text-text-main/75 leading-7">Atendimento em Niterói e também online, facilitando continuidade e acesso de qualquer lugar do Brasil.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+            <h3 class="font-heading text-2xl text-text-main">Abordagem em psicanálise</h3>
+            <p class="mt-3 text-text-main/75 leading-7">Um trabalho voltado a compreender conflitos, emoções, padrões e histórias que merecem ser escutadas com profundidade.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+            <h3 class="font-heading text-2xl text-text-main">Próximo passo claro</h3>
+            <p class="mt-3 text-text-main/75 leading-7">O visitante não precisa adivinhar o que fazer: o site conduz para conversa, contato e agendamento com muito mais clareza.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
 		<Testimonials />
+
+    <section class="bg-primary-bg px-6 py-16 md:px-12 lg:px-20 lg:py-20">
+      <div class="mx-auto max-w-5xl rounded-[2rem] bg-card-bg/50 p-8 md:p-10">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent/80">Dúvidas frequentes</p>
+          <h2 class="mt-3 font-heading text-3xl text-text-main md:text-4xl">
+            Informações importantes antes de agendar.
+          </h2>
+        </div>
+
+        <div class="mt-8 space-y-4">
+          {faqItems.map((item) => (
+            <details class="rounded-2xl bg-white p-5 shadow-sm group">
+              <summary class="cursor-pointer list-none font-heading text-xl text-text-main marker:hidden group-open:text-accent">
+                {item.question}
+              </summary>
+              <p class="mt-3 pr-6 leading-7 text-text-main/75">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <BlogGrid limit={3} />
+
+    <section class="bg-primary-bg px-6 pb-16 md:px-12 lg:px-20 lg:pb-20">
+      <div class="mx-auto max-w-6xl rounded-[2rem] bg-[#2f2c87] px-8 py-10 text-white md:px-12 md:py-14">
+        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/75">Agendamento</p>
+            <h2 class="mt-3 font-heading text-3xl md:text-4xl">Se fizer sentido para você, o próximo passo é uma conversa.</h2>
+            <p class="mt-4 max-w-2xl text-lg leading-8 text-white/80">
+              Clique no WhatsApp para falar com a Elisa, tirar dúvidas sobre o atendimento e verificar disponibilidade para iniciar o acompanhamento.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <WhatsAppButton
+              label="Falar com Elisa agora"
+              className="justify-center rounded-full bg-white px-6 py-4 font-semibold text-[#2f2c87] transition-colors hover:bg-stone-100"
+              showIcon={false}
+            />
+            <a
+              href="/contato"
+              class="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-4 font-medium text-white transition-colors hover:bg-white/10"
+            >
+              Ver página de contato
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 	</main>
 
 	<Footer />

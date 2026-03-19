@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { bairros, getBairrosByRegiao } from '../../data/bairros';
+import { getBairroImage } from '../../data/bairroImages';
 import type { Bairro } from '../../data/bairros';
 
 export function getStaticPaths() {
@@ -16,6 +17,7 @@ const { bairro } = Astro.props as { bairro: Bairro };
 const nearbyBairros = getBairrosByRegiao(bairro.regiao).filter((b) => b.slug !== bairro.slug);
 
 const isSaoFrancisco = bairro.slug === "sao-francisco";
+const bairroImage = getBairroImage(bairro.slug, bairro.regiao);
 
 const locationSchema = {
   "@context": "https://schema.org",
@@ -73,21 +75,39 @@ const locationSchema = {
 
     <!-- Hero -->
     <section class="py-12 md:py-16 px-6 md:px-12 lg:px-20 bg-card-bg/40">
-      <div class="max-w-4xl mx-auto">
-        <p class="text-accent text-sm font-medium uppercase tracking-wider mb-3">{bairro.regiao} · Niterói, RJ</p>
-        <h1 class="font-heading text-4xl md:text-5xl text-text-main mb-4">
-          Psicóloga em {bairro.name}
-        </h1>
-        <p class="text-text-main/70 text-lg max-w-2xl mb-8">
-          Elisa Fontes atende pacientes de {bairro.name} com acompanhamento psicanalítico presencial e online.
-          38 anos de experiência cuidando de pessoas. CRP 05/62794.
-        </p>
-        <a
-          href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
-          class="inline-block bg-accent text-white px-8 py-3 rounded-sm font-medium hover:bg-accent/90 transition-colors"
-        >
-          Agendar consulta
-        </a>
+      <div class="max-w-5xl mx-auto grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <p class="text-accent text-sm font-medium uppercase tracking-wider mb-3">{bairro.regiao} · Niterói, RJ</p>
+          <h1 class="font-heading text-4xl md:text-5xl text-text-main mb-4">
+            Psicóloga em {bairro.name}
+          </h1>
+          <p class="text-text-main/70 text-lg max-w-2xl mb-8">
+            Elisa Fontes atende pacientes de {bairro.name} com acompanhamento psicanalítico presencial e online.
+            38 anos de experiência cuidando de pessoas. CRP 05/62794.
+          </p>
+          <a
+            href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+            class="inline-block bg-accent text-white px-8 py-3 rounded-sm font-medium hover:bg-accent/90 transition-colors"
+          >
+            Agendar consulta
+          </a>
+        </div>
+
+        <figure class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-stone-200">
+          <img
+            src={bairroImage.src}
+            alt={bairroImage.alt}
+            loading="eager"
+            class="h-full max-h-[360px] w-full object-cover"
+          />
+          <figcaption class="px-4 py-3 text-xs text-text-main/60">
+            Imagem de referência de {bairro.name} ou da região. Crédito:
+            <a href={bairroImage.creditUrl} target="_blank" rel="noopener noreferrer" class="underline hover:text-accent transition-colors">
+              {bairroImage.creditLabel}
+            </a>
+            · {bairroImage.license}
+          </figcaption>
+        </figure>
       </div>
     </section>
 

@@ -116,7 +116,7 @@ const locationSchema = {
       <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-10">
 
         <!-- Article -->
-        <article class="md:col-span-2 prose prose-lg max-w-none prose-headings:font-heading prose-headings:text-text-main prose-p:text-text-main/80 prose-a:text-accent prose-p:mb-8 prose-headings:mt-12 prose-headings:mb-4 prose-h2:text-2xl prose-h2:border-b prose-h2:border-stone-200 prose-h2:pb-2">
+        <article class="article-content md:col-span-2 max-w-none">
 
           <h2>Atendimento psicológico para quem mora em {bairro.name}</h2>
           <p>
@@ -243,3 +243,45 @@ const locationSchema = {
 
   <Footer />
 </Layout>
+
+<style>
+  .article-content {
+    color: rgba(74, 64, 54, 0.8);
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .article-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4A4036;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e7e5e4;
+  }
+
+  .article-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+
+  .article-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-content a {
+    color: #333399;
+    text-decoration: underline;
+  }
+
+  .article-content strong {
+    color: #4A4036;
+  }
+</style>

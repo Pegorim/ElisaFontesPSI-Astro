@@ -1,46 +1,57 @@
 ---
 import WhatsAppButton from './WhatsAppButton.astro';
+
+const links = [
+  { href: '/sobre', label: 'Sobre a Elisa' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/areas-atendidas', label: 'Áreas atendidas' },
+  { href: '/contato', label: 'Contato' },
+];
 ---
 
-<footer class="bg-primary-bg pt-8 pb-6 px-6 md:px-12 lg:px-20">
-  <!-- Navigation Row -->
-  <div class="flex items-center justify-center gap-6 md:gap-10 flex-wrap mb-8">
-    <!-- Main CTA Button -->
-    <WhatsAppButton
-      label="Agendar minha consulta"
-      className="bg-accent text-white px-6 py-3 rounded-sm font-medium hover:bg-accent/90 transition-colors"
-      showIcon={false}
-    />
+<footer class="bg-[#f3ebe2] px-6 py-12 md:px-12 lg:px-20">
+  <div class="mx-auto grid max-w-7xl gap-10 border-t border-text-main/10 pt-10 lg:grid-cols-[1.15fr_0.85fr_0.8fr]">
+    <div>
+      <p class="font-heading text-3xl text-text-main">Elisa Fontes</p>
+      <p class="mt-2 text-text-main/70">Psicóloga clínica · CRP 05/62794</p>
+      <p class="mt-5 max-w-xl leading-7 text-text-main/75">
+        Atendimento presencial em Niterói e psicoterapia online para adultos e adolescentes a partir de 16 anos.
+      </p>
+      <div class="mt-6">
+        <WhatsAppButton
+          label="Conversar pelo WhatsApp"
+          className="justify-center rounded-full bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+          showIcon={false}
+        />
+      </div>
+    </div>
 
-    <!-- Navigation Links -->
-    <a href="/sobre" class="text-text-main underline hover:text-accent transition-colors">
-      Sobre mim
-    </a>
-    <a href="/blog" class="text-text-main underline hover:text-accent transition-colors">
-      Blog
-    </a>
-    <a href="/areas-atendidas" class="text-text-main underline hover:text-accent transition-colors">
-      Localização
-    </a>
-    <a href="/contato" class="text-text-main underline hover:text-accent transition-colors">
-      Contato
-    </a>
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-accent/80">Atendimento</h2>
+      <ul class="mt-4 space-y-3 text-text-main/75">
+        <li>Rua Rui Barbosa, 29 - Sala 213</li>
+        <li>São Francisco, Niterói - RJ</li>
+        <li>Segunda a sábado, 10h às 20h</li>
+        <li>Online para todo o Brasil</li>
+      </ul>
+    </div>
+
+    <nav aria-label="Links do rodapé">
+      <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-accent/80">Navegação</h2>
+      <ul class="mt-4 space-y-3">
+        {links.map((link) => (
+          <li>
+            <a href={link.href} class="text-text-main/75 underline-offset-4 transition-colors hover:text-accent hover:underline">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
 
-  <!-- Info Columns -->
-  <div class="flex justify-between items-start text-sm text-text-main/70 max-w-4xl mx-auto">
-    <div class="flex items-center gap-2">
-      <span class="text-text-main">.</span>
-      <span>Online ou presencial</span>
-      <span class="text-text-main">.</span>
-    </div>
-    <div class="flex items-center gap-2">
-      <span class="text-text-main">.</span>
-      <span>Escolha o dia e a hora da sua sessão</span>
-      <span class="text-text-main">.</span>
-    </div>
-    <div>
-      <span>Todo o Brasil</span>
-    </div>
+  <div class="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-text-main/10 pt-6 text-sm text-text-main/55 md:flex-row md:items-center md:justify-between">
+    <p>© {new Date().getFullYear()} Elisa Fontes Psicologia.</p>
+    <p>Site informativo. Atendimento psicológico mediante agendamento.</p>
   </div>
 </footer>

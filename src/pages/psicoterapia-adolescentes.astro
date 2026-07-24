@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const pageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Psicoterapia para adolescentes a partir de 16 anos",
+    "description": "Pagina informativa sobre psicoterapia para adolescentes a partir de 16 anos, com orientacoes sobre procura por atendimento e primeiro contato.",
+    "url": "https://elisafontes.com.br/psicoterapia-adolescentes",
+    "about": {
+      "@type": "MedicalTherapy",
+      "name": "Psicoterapia para adolescentes"
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Elisa Fontes",
+      "jobTitle": "Psicologa Clinica",
+      "telephone": "+55-21-98744-9887",
+      "email": "psi.elisafontes@gmail.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Elisa atende adolescentes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A pagina organiza o atendimento para adolescentes a partir de 16 anos. A disponibilidade e a indicacao precisam ser confirmadas no primeiro contato."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quando a terapia pode ajudar um adolescente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pode ajudar quando ansiedade, tristeza, isolamento, conflitos, autocobranca ou mudancas importantes comecam a pesar na rotina, nas relacoes ou nos estudos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Responsaveis participam do processo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A participacao dos responsaveis e os limites de sigilo devem ser combinados com cuidado, conforme idade, contexto e necessidade clinica."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Psicoterapia para adolescentes | Elisa Fontes"
+  description="Psicoterapia para adolescentes a partir de 16 anos com Elisa Fontes. Entenda quando buscar ajuda e como iniciar uma conversa com cuidado."
+  schema={pageSchema}
+>
+  <Header />
+
+  <main class="bg-primary-bg">
+    <section class="bg-card-bg/40 px-6 py-16 md:px-12 md:py-20 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+            Atendimento para adolescentes +16
+          </p>
+          <h1 class="mb-6 font-heading text-4xl text-text-main md:text-5xl">
+            Psicoterapia para adolescentes quando crescer fica pesado demais
+          </h1>
+          <p class="mb-8 max-w-2xl text-lg leading-8 text-text-main/75">
+            A adolescencia pode reunir mudancas no corpo, nas relacoes, na escola, na familia e na
+            forma de se ver no mundo. A terapia oferece um espaco de escuta para adolescentes a
+            partir de 16 anos, sem transformar sofrimento em rotulo apressado.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Perguntar sobre atendimento"
+              ctaId="adolescentes_hero"
+              className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+            />
+            <a
+              href="/contato"
+              class="inline-flex justify-center rounded-sm border border-accent px-6 py-3 font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Ver contato e formatos
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <h2 class="mb-4 font-heading text-2xl text-text-main">Sinais que merecem conversa</h2>
+          <ul class="space-y-4 text-sm leading-7 text-text-main/75">
+            <li><strong class="text-text-main">Ansiedade ou tristeza:</strong> preocupacao, choro, irritacao ou desanimo frequentes.</li>
+            <li><strong class="text-text-main">Isolamento:</strong> afastamento de pessoas, lugares e atividades que antes faziam sentido.</li>
+            <li><strong class="text-text-main">Autocobranca:</strong> medo intenso de falhar, comparacao constante ou perfeccionismo paralisante.</li>
+            <li><strong class="text-text-main">Conflitos:</strong> dificuldade de falar, pedir ajuda ou lidar com limites em casa e fora dela.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <h2 class="font-heading text-3xl text-text-main">
+            Terapia nao precisa comecar no limite
+          </h2>
+          <p class="mt-4 leading-8 text-text-main/70">
+            Muitas familias procuram ajuda somente quando tudo parece urgente. Mas o cuidado tambem
+            pode comecar quando o adolescente ja da sinais de sobrecarga, confusao, sofrimento ou
+            dificuldade de se comunicar.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Um espaco para falar</h3>
+            <p class="leading-7 text-text-main/70">
+              A sessao cria um lugar protegido para colocar em palavras o que muitas vezes aparece como silencio, irritacao ou afastamento.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Respeito ao tempo</h3>
+            <p class="leading-7 text-text-main/70">
+              O processo nao exige que tudo seja explicado de uma vez. A confianca e construida aos poucos.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Combinados claros</h3>
+            <p class="leading-7 text-text-main/70">
+              Responsaveis, sigilo, frequencia e formato precisam ser alinhados com cuidado desde o inicio.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Sem promessas simplistas</h3>
+            <p class="leading-7 text-text-main/70">
+              Um atendimento serio nao promete corrigir comportamento rapidamente nem substituir dialogo familiar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-stone-200 bg-white px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">
+          Como pode ser o primeiro contato
+        </h2>
+        <div class="space-y-5 leading-8 text-text-main/75">
+          <p>
+            O primeiro contato pode servir para entender idade, contexto, principal preocupacao,
+            disponibilidade e se o atendimento presencial em Niteroi ou online faz sentido para a
+            situacao.
+          </p>
+          <p>
+            Quando responsaveis participam, tambem e importante combinar o que precisa ser
+            compartilhado, o que deve ser preservado e como sustentar o cuidado sem invadir o
+            espaco terapeutico.
+          </p>
+          <p>
+            Se a ansiedade e o ponto principal, leia tambem a pagina de
+            <a href="/psicoterapia-para-ansiedade" class="text-accent underline">psicoterapia para ansiedade</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">Perguntas comuns</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              O adolescente precisa querer fazer terapia?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              O desejo pode aparecer de formas diferentes. Algumas pessoas chegam curiosas, outras
+              resistentes ou inseguras. O primeiro passo e abrir uma conversa honesta sobre a
+              possibilidade de ajuda.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              A terapia substitui conversa com a familia?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Nao. A terapia oferece um espaco clinico proprio, mas o cuidado familiar, os limites
+              e a comunicacao em casa continuam importantes.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Pode ser online?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Pode, se houver privacidade e condicoes adequadas. O formato precisa ser avaliado no
+              primeiro contato, junto com a disponibilidade da agenda.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-card-bg/50 px-6 py-14 text-center md:px-12 lg:px-20">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-4 font-heading text-3xl text-text-main">
+          Quer entender se faz sentido buscar atendimento?
+        </h2>
+        <p class="mb-6 leading-8 text-text-main/70">
+          Envie uma mensagem breve para tirar duvidas sobre idade, formato, disponibilidade e
+          proximos passos.
+        </p>
+        <WhatsAppButton
+          label="Conversar pelo WhatsApp"
+          ctaId="adolescentes_footer"
+          className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

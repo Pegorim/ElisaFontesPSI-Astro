@@ -3,12 +3,14 @@ interface Props {
   label?: string;
   className?: string;
   showIcon?: boolean;
+  ctaId?: string;
 }
 
 const {
   label = 'Agendar pelo WhatsApp',
   className = '',
   showIcon = true,
+  ctaId = 'whatsapp_cta',
 } = Astro.props;
 
 const phone = '5521987449887';
@@ -19,6 +21,7 @@ const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}&utm_sou
 <a
   href={href}
   aria-label="Chat no WhatsApp"
+  data-whatsapp-cta={ctaId}
   class={`inline-flex items-center gap-2 ${className}`}
 >
   {showIcon && <img src="/images/whatsapp-icon.svg" alt="" class="w-5 h-5 invert" />}

@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const pageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Terapia online com Elisa Fontes",
+    "description": "Informacoes sobre terapia online, quando o formato pode fazer sentido e como iniciar o primeiro contato com Elisa Fontes.",
+    "url": "https://elisafontes.com.br/terapia-online",
+    "about": {
+      "@type": "MedicalTherapy",
+      "name": "Psicoterapia online"
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Elisa Fontes",
+      "jobTitle": "Psicologa Clinica",
+      "telephone": "+55-21-98744-9887",
+      "email": "psi.elisafontes@gmail.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Terapia online funciona?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A terapia online pode ser uma boa alternativa quando ha privacidade, conexao estavel e compromisso com o horario. A indicacao depende da situacao de cada pessoa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que preciso para uma sessao online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "E importante ter um local reservado, internet estavel, fones quando possivel e um horario em que voce consiga falar com tranquilidade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso alternar entre online e presencial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Essa possibilidade deve ser combinada diretamente com Elisa, conforme disponibilidade, rotina e necessidade clinica."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Terapia online | Elisa Fontes"
+  description="Terapia online com Elisa Fontes para quem busca atendimento psicologico com privacidade, continuidade e escuta cuidadosa."
+  schema={pageSchema}
+>
+  <Header />
+
+  <main class="bg-primary-bg">
+    <section class="bg-card-bg/40 px-6 py-16 md:px-12 md:py-20 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+            Atendimento psicologico a distancia
+          </p>
+          <h1 class="mb-6 font-heading text-4xl text-text-main md:text-5xl">
+            Terapia online para cuidar da vida emocional com continuidade
+          </h1>
+          <p class="mb-8 max-w-2xl text-lg leading-8 text-text-main/75">
+            A terapia online pode ajudar quem precisa de um espaco regular de escuta, mas mora
+            longe, viaja, tem rotina instavel ou prefere iniciar o processo em um ambiente privado
+            de casa.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Perguntar sobre terapia online"
+              ctaId="terapia_online_hero"
+              className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+            />
+            <a
+              href="/contato"
+              class="inline-flex justify-center rounded-sm border border-accent px-6 py-3 font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Ver contato e disponibilidade
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <h2 class="mb-4 font-heading text-2xl text-text-main">Antes da primeira sessao</h2>
+          <ul class="space-y-4 text-sm leading-7 text-text-main/75">
+            <li><strong class="text-text-main">Privacidade:</strong> escolha um lugar onde voce possa falar sem interrupcoes.</li>
+            <li><strong class="text-text-main">Conexao:</strong> teste internet, audio e video antes do horario combinado.</li>
+            <li><strong class="text-text-main">Ritmo:</strong> reserve alguns minutos antes e depois para chegar e sair da sessao com calma.</li>
+            <li><strong class="text-text-main">Primeiro contato:</strong> envie uma mensagem breve para tirar duvidas sobre horarios e formato.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <h2 class="font-heading text-3xl text-text-main">
+            Quando o formato online pode fazer sentido
+          </h2>
+          <p class="mt-4 leading-8 text-text-main/70">
+            O ponto principal nao e a distancia em si. E a possibilidade de manter um espaco
+            constante, protegido e possivel dentro da sua rotina.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Rotina com deslocamento dificil</h3>
+            <p class="leading-7 text-text-main/70">
+              Para quem trabalha longe, cuida de outras pessoas ou tem pouco tempo entre compromissos.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Mudancas e viagens</h3>
+            <p class="leading-7 text-text-main/70">
+              O online pode ajudar a manter continuidade mesmo em semanas fora da cidade.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Busca por privacidade</h3>
+            <p class="leading-7 text-text-main/70">
+              Algumas pessoas se sentem mais a vontade iniciando de um ambiente familiar e reservado.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Mora fora de Niteroi</h3>
+            <p class="leading-7 text-text-main/70">
+              O atendimento online amplia o acesso para quem esta em outras cidades do Brasil.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-stone-200 bg-white px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">
+          O que esperar do atendimento a distancia
+        </h2>
+        <div class="space-y-5 leading-8 text-text-main/75">
+          <p>
+            A sessao online tambem precisa de combinados claros: horario, frequencia, ambiente
+            reservado, plataforma usada e forma de avisar caso haja algum imprevisto tecnico.
+          </p>
+          <p>
+            Voce nao precisa chegar com tudo organizado. O primeiro contato pode servir para
+            entender se ha disponibilidade, tirar duvidas praticas e combinar os proximos passos.
+          </p>
+          <p>
+            Como em qualquer processo terapeutico, nao ha promessa de resultado rapido. O trabalho
+            acontece com escuta, continuidade e respeito ao tempo de cada pessoa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">Perguntas comuns</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Terapia online e igual a terapia presencial?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Sao formatos diferentes, mas ambos podem sustentar um processo terapeutico serio.
+              A melhor escolha depende da sua rotina, privacidade, necessidade clinica e possibilidade
+              de continuidade.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Preciso falar muito na primeira mensagem?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Nao. Voce pode enviar uma mensagem curta perguntando sobre terapia online, horarios
+              disponiveis e como funciona a primeira conversa.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Posso fazer terapia online mesmo morando em Niteroi?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Sim, se esse formato fizer sentido para a sua rotina. Tambem pode ser possivel avaliar
+              atendimento presencial em Sao Francisco, conforme disponibilidade.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-card-bg/50 px-6 py-14 text-center md:px-12 lg:px-20">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-4 font-heading text-3xl text-text-main">
+          Quer saber se a terapia online faz sentido para voce?
+        </h2>
+        <p class="mb-6 leading-8 text-text-main/70">
+          Envie uma mensagem simples para entender disponibilidade, formato de atendimento e
+          proximos passos.
+        </p>
+        <WhatsAppButton
+          label="Falar sobre terapia online"
+          ctaId="terapia_online_footer"
+          className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

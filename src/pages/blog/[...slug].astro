@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import BlogCTA from '../../components/BlogCTA.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -55,13 +56,39 @@ const articleSchema = {
     "name": "Niterói, RJ, Brasil"
   }
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://elisafontes.com.br/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://elisafontes.com.br/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": post.data.title,
+      "item": `https://elisafontes.com.br/blog/${post.id.replace(/\.md$/, '')}`
+    }
+  ]
+};
 ---
 
 <Layout
   title={`${post.data.title} | Elisa Fontes - Psicóloga`}
   description={post.data.description}
   image={post.data.image}
-  schema={articleSchema}
+  schema={[articleSchema, breadcrumbSchema]}
+  ogType="article"
 >
   <Header />
 
@@ -126,7 +153,7 @@ const articleSchema = {
               Elisa Fontes
             </p>
             <p class="text-sm text-text-main/70 mb-3">
-              Psicóloga Clínica | CRP 05/72023
+              Psicóloga Clínica | CRP 05/62794
             </p>
             <p class="text-sm text-text-main/70">
               Especialista em ansiedade, autoestima e desenvolvimento pessoal.
@@ -136,21 +163,7 @@ const articleSchema = {
         </div>
       </aside>
 
-      <!-- CTA -->
-      <div class="mt-12 text-center p-8 bg-card-bg rounded-lg">
-        <h3 class="font-heading text-2xl text-text-main mb-4">
-          Precisa de ajuda profissional?
-        </h3>
-        <p class="text-text-main/70 mb-6">
-          Agende uma consulta e comece sua jornada de autoconhecimento.
-        </p>
-        <a
-          href="https://elisafontes.com.br/contato"
-          class="inline-block bg-accent text-white px-8 py-3 rounded-sm font-medium hover:bg-accent/90 transition-colors"
-        >
-          Agendar consulta
-        </a>
-      </div>
+      <BlogCTA ctaId={`blog_${post.id.replace(/\.md$/, '')}_cta`} />
     </article>
   </main>
 

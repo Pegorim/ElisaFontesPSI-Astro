@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const pageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Psicanalise e psicoterapia com Elisa Fontes",
+    "description": "Pagina informativa sobre psicanalise, psicoterapia e a abordagem clinica de Elisa Fontes.",
+    "url": "https://elisafontes.com.br/psicanalise-e-psicoterapia",
+    "about": {
+      "@type": "MedicalTherapy",
+      "name": "Psicoterapia psicanalitica"
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Elisa Fontes",
+      "jobTitle": "Psicologa Clinica",
+      "telephone": "+55-21-98744-9887",
+      "email": "psi.elisafontes@gmail.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Psicanalise e psicoterapia sao a mesma coisa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Psicoterapia e o processo clinico de cuidado pela fala. A psicanalise e uma das abordagens possiveis dentro desse campo, com atencao a historia, repeticoes, desejos e sentidos singulares do sofrimento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso saber falar sobre mim para comecar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nao. A terapia pode comecar justamente a partir da dificuldade de falar, da confusao ou da sensacao de nao saber por onde comecar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A abordagem psicanalitica da conselhos prontos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nao e esse o centro do trabalho. A escuta psicanalitica ajuda a pessoa a compreender melhor o que se repete em sua historia e a se posicionar com mais liberdade."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Psicanalise e psicoterapia | Elisa Fontes"
+  description="Entenda a abordagem de psicanalise e psicoterapia de Elisa Fontes: escuta clinica, historia, repeticoes e cuidado sem respostas prontas."
+  schema={pageSchema}
+>
+  <Header />
+
+  <main class="bg-primary-bg">
+    <section class="bg-card-bg/40 px-6 py-16 md:px-12 md:py-20 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+            Abordagem clinica
+          </p>
+          <h1 class="mb-6 font-heading text-4xl text-text-main md:text-5xl">
+            Psicanalise e psicoterapia para escutar a propria historia
+          </h1>
+          <p class="mb-8 max-w-2xl text-lg leading-8 text-text-main/75">
+            A psicoterapia de orientacao psicanalitica cria um espaco para falar sobre sofrimento,
+            repeticoes, conflitos e escolhas sem reduzir a pessoa a um sintoma ou a uma resposta
+            pronta.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Perguntar sobre atendimento"
+              ctaId="psicanalise_hero"
+              className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+            />
+            <a
+              href="/blog/psicanalise-na-pratica"
+              class="inline-flex justify-center rounded-sm border border-accent px-6 py-3 font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Ler sobre psicanalise na pratica
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <h2 class="mb-4 font-heading text-2xl text-text-main">O que essa escuta observa</h2>
+          <ul class="space-y-4 text-sm leading-7 text-text-main/75">
+            <li><strong class="text-text-main">Historia:</strong> como experiencias, vinculos e perdas continuam aparecendo no presente.</li>
+            <li><strong class="text-text-main">Repeticoes:</strong> escolhas, medos e conflitos que retornam mesmo quando a pessoa tenta mudar.</li>
+            <li><strong class="text-text-main">Sintomas:</strong> ansiedade, tristeza, travamentos e dores que pedem uma escuta mais cuidadosa.</li>
+            <li><strong class="text-text-main">Singularidade:</strong> o sentido do sofrimento em uma vida concreta, nao em uma formula geral.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <h2 class="font-heading text-3xl text-text-main">
+            Terapia nao e conversa qualquer
+          </h2>
+          <p class="mt-4 leading-8 text-text-main/70">
+            A sessao e um tempo reservado para dizer o que muitas vezes fica confuso, engolido ou
+            repetido no automatico. A escuta clinica sustenta perguntas que a vida corrida nem
+            sempre deixa aparecer.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Sem conselho pronto</h3>
+            <p class="leading-7 text-text-main/70">
+              O trabalho nao substitui sua decisao por uma opiniao externa. Ele ajuda a entender o que esta em jogo.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Com continuidade</h3>
+            <p class="leading-7 text-text-main/70">
+              Mudancas importantes costumam acontecer com presenca, tempo e regularidade, nao por atalhos.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Com cuidado etico</h3>
+            <p class="leading-7 text-text-main/70">
+              A pagina nao promete cura rapida, diagnostico online ou resultado garantido.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Com lugar para duvida</h3>
+            <p class="leading-7 text-text-main/70">
+              Voce nao precisa chegar sabendo explicar tudo. A dificuldade de comecar tambem pode ser escutada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-stone-200 bg-white px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">
+          Quando essa abordagem pode fazer sentido
+        </h2>
+        <div class="space-y-5 leading-8 text-text-main/75">
+          <p>
+            A psicanalise pode interessar a quem quer entender melhor os proprios padroes, a forma
+            de se relacionar, a autocobranca, a ansiedade, a tristeza, os impasses de escolha ou a
+            sensacao de repetir conflitos parecidos.
+          </p>
+          <p>
+            O processo nao precisa comecar por uma crise. Tambem pode comecar pelo desejo de se
+            escutar com mais profundidade e de construir uma relacao menos automatica consigo e
+            com os outros.
+          </p>
+          <p>
+            Se a duvida e como a primeira conversa acontece, leia tambem o artigo sobre
+            <a href="/blog/o-que-acontece-primeira-sessao-terapia" class="text-accent underline">primeira sessao de terapia</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">Perguntas comuns</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Psicanalise serve apenas para falar do passado?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Nao. A historia importa porque pode ajudar a entender o presente. O foco nao e
+              procurar culpados, mas escutar como certos modos de sofrer continuam operando hoje.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              E preciso ter um diagnostico para comecar?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Nao. Voce pode procurar terapia por sofrimento, duvida, repeticao, desejo de se
+              entender melhor ou dificuldade de sustentar algo na vida cotidiana.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              O atendimento pode ser online?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Pode, quando ha privacidade e condicoes adequadas. Tambem pode haver atendimento
+              presencial em Niteroi, conforme disponibilidade.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-card-bg/50 px-6 py-14 text-center md:px-12 lg:px-20">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-4 font-heading text-3xl text-text-main">
+          Quer entender se esse tipo de escuta faz sentido para voce?
+        </h2>
+        <p class="mb-6 leading-8 text-text-main/70">
+          Envie uma mensagem breve para tirar duvidas sobre formato, disponibilidade e proximos passos.
+        </p>
+        <WhatsAppButton
+          label="Conversar pelo WhatsApp"
+          ctaId="psicanalise_footer"
+          className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

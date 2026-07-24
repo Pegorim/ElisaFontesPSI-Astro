@@ -1,0 +1,36 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+
+interface Props {
+  ctaId?: string;
+}
+
+const { ctaId = 'blog_article_cta' } = Astro.props;
+---
+
+<aside class="mt-12 bg-card-bg rounded-lg p-6 md:p-8">
+  <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+    <div>
+      <p class="font-heading text-2xl text-text-main mb-3">
+        Quer entender se a terapia faz sentido para o seu momento?
+      </p>
+      <p class="text-text-main/70 leading-7">
+        Você pode enviar uma primeira mensagem breve para tirar dúvidas sobre atendimento online,
+        presencial em Niterói e próximos passos, sem precisar explicar tudo de uma vez.
+      </p>
+    </div>
+    <div class="flex flex-col gap-3 md:min-w-64">
+      <WhatsAppButton
+        label="Falar pelo WhatsApp"
+        ctaId={ctaId}
+        className="justify-center rounded-sm bg-accent px-5 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+      />
+      <a
+        href="/contato"
+        class="text-center text-sm font-medium text-accent underline hover:opacity-80"
+      >
+        Ver contato e localização
+      </a>
+    </div>
+  </div>
+</aside>

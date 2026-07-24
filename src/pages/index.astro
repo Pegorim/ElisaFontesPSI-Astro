@@ -25,11 +25,26 @@ const faqItems = [
       'Adultos e adolescentes a partir de 16 anos que estejam buscando acompanhamento psicológico com escuta acolhedora e aprofundamento emocional.'
   }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
 ---
 
 <Layout
   title="Elisa Fontes | Psicóloga em Niterói - Terapia online e presencial"
   description="Psicóloga clínica em Niterói com atendimento online e presencial. Agende sua consulta com Elisa Fontes e encontre um espaço seguro para cuidar da sua saúde mental."
+  schema={faqSchema}
+  includeDefaultSchema
 >
 	<main>
 		<Hero />
@@ -111,6 +126,7 @@ const faqItems = [
               label="Falar com Elisa agora"
               className="justify-center rounded-full bg-white px-6 py-4 font-semibold text-[#2f2c87] transition-colors hover:bg-stone-100"
               showIcon={false}
+              ctaId="home_final_cta"
             />
             <a
               href="/contato"

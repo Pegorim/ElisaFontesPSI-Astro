@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const pageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Psicoterapia para ansiedade com Elisa Fontes",
+    "description": "Pagina informativa sobre psicoterapia para ansiedade, sinais que merecem atencao e como iniciar atendimento com Elisa Fontes.",
+    "url": "https://elisafontes.com.br/psicoterapia-para-ansiedade",
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "Ansiedade"
+    },
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Elisa Fontes",
+      "jobTitle": "Psicologa Clinica",
+      "telephone": "+55-21-98744-9887",
+      "email": "psi.elisafontes@gmail.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quando procurar terapia para ansiedade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pode ser um bom momento quando preocupacoes, tensao, medo, pensamentos acelerados ou evitacao comecam a limitar a rotina, o sono, as relacoes ou a capacidade de descansar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A terapia para ansiedade promete cura rapida?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nao. O processo terapeutico e construido com escuta, continuidade e cuidado, sem promessa de resultado rapido ou garantido."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ansiedade com sintomas fisicos precisa de medico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sintomas fisicos novos, intensos ou assustadores devem ser avaliados por profissionais de saude. A psicoterapia pode ajudar a compreender a dimensao emocional quando causas clinicas tambem sao consideradas."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Psicoterapia para ansiedade | Elisa Fontes"
+  description="Psicoterapia para ansiedade com Elisa Fontes. Entenda sinais comuns, quando buscar ajuda e como iniciar atendimento presencial em Niteroi ou online."
+  schema={pageSchema}
+>
+  <Header />
+
+  <main class="bg-primary-bg">
+    <section class="bg-card-bg/40 px-6 py-16 md:px-12 md:py-20 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+            Ansiedade, escuta e cuidado clinico
+          </p>
+          <h1 class="mb-6 font-heading text-4xl text-text-main md:text-5xl">
+            Psicoterapia para ansiedade quando a mente nao descansa
+          </h1>
+          <p class="mb-8 max-w-2xl text-lg leading-8 text-text-main/75">
+            A ansiedade pode aparecer como preocupacao constante, corpo em alerta, pensamentos
+            acelerados, medo de perder o controle ou dificuldade de viver o presente. A terapia
+            cria um espaco para escutar esse sofrimento sem pressa e sem promessas simplistas.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Perguntar sobre atendimento"
+              ctaId="ansiedade_hero"
+              className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+            />
+            <a
+              href="/blog/ansiedade-sinais-mente-pedindo-cuidado"
+              class="inline-flex justify-center rounded-sm border border-accent px-6 py-3 font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Ler sinais de ansiedade
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <h2 class="mb-4 font-heading text-2xl text-text-main">Sinais que merecem atencao</h2>
+          <ul class="space-y-4 text-sm leading-7 text-text-main/75">
+            <li><strong class="text-text-main">Mente acelerada:</strong> preocupacoes repetidas, antecipacao de problemas e dificuldade de desligar.</li>
+            <li><strong class="text-text-main">Corpo em alerta:</strong> tensao, aperto no peito, respiracao curta ou sono pouco reparador.</li>
+            <li><strong class="text-text-main">Evitacao:</strong> adiar conversas, tarefas ou lugares por medo do que pode acontecer.</li>
+            <li><strong class="text-text-main">Custo emocional:</strong> funcionar por fora, mas viver exausto por dentro.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <h2 class="font-heading text-3xl text-text-main">
+            O objetivo nao e apagar toda ansiedade
+          </h2>
+          <p class="mt-4 leading-8 text-text-main/70">
+            A ansiedade tambem faz parte da vida. O cuidado comeca quando ela passa a mandar na
+            rotina, nos vinculos, no sono e nas escolhas. A terapia ajuda a diferenciar alerta
+            necessario de sofrimento que precisa ser elaborado.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Nomear o que acontece</h3>
+            <p class="leading-7 text-text-main/70">
+              Falar sobre medos, sintomas e repeticoes ajuda a tirar a experiencia do campo confuso.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Entender padroes</h3>
+            <p class="leading-7 text-text-main/70">
+              A escuta clinica observa como cobranca, controle, historia e relacoes alimentam a ansiedade.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Criar continuidade</h3>
+            <p class="leading-7 text-text-main/70">
+              O processo acontece com regularidade, respeitando o tempo de cada pessoa.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Evitar promessas vazias</h3>
+            <p class="leading-7 text-text-main/70">
+              Um atendimento serio nao promete cura rapida, diagnostico pela internet ou resultado garantido.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-stone-200 bg-white px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">
+          Como pode comecar
+        </h2>
+        <div class="space-y-5 leading-8 text-text-main/75">
+          <p>
+            Voce nao precisa chegar com tudo explicado. Muitas vezes, a primeira frase e simples:
+            "nao sei exatamente o que esta acontecendo, mas sinto que preciso cuidar disso".
+          </p>
+          <p>
+            O primeiro contato pode servir para perguntar sobre horarios, formato presencial em
+            Sao Francisco, atendimento online e proximos passos. Assuntos sensiveis devem ser
+            tratados com mais seguranca dentro da sessao.
+          </p>
+          <p>
+            Se voce ainda esta tentando entender seus sinais, leia tambem o artigo
+            <a href="/blog/ansiedade-sinais-mente-pedindo-cuidado" class="text-accent underline">Ansiedade: sinais de que sua mente esta pedindo cuidado</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">Perguntas comuns</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Preciso ter diagnostico de ansiedade para procurar terapia?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Nao. Voce pode procurar terapia por sofrimento, duvidas, sintomas ou desejo de se
+              entender melhor. Diagnosticos, quando necessarios, precisam de avaliacao profissional.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Sintomas fisicos podem ser ansiedade?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Podem estar relacionados, mas sintomas fisicos novos, intensos ou assustadores devem
+              ser avaliados por profissionais de saude. A terapia pode caminhar junto desse cuidado.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              O atendimento pode ser online?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Sim, quando ha privacidade e condicoes adequadas para a sessao. Voce tambem pode
+              entender melhor esse formato na pagina de <a href="/terapia-online" class="text-accent underline">terapia online</a>.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-card-bg/50 px-6 py-14 text-center md:px-12 lg:px-20">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-4 font-heading text-3xl text-text-main">
+          Quer tirar uma duvida antes de agendar?
+        </h2>
+        <p class="mb-6 leading-8 text-text-main/70">
+          Envie uma mensagem breve para entender disponibilidade, formato de atendimento e como
+          funciona a primeira conversa.
+        </p>
+        <WhatsAppButton
+          label="Falar com Elisa"
+          ctaId="ansiedade_footer"
+          className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

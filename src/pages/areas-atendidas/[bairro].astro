@@ -54,12 +54,37 @@ const locationSchema = {
     "name": "CRP 05/62794"
   }
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://elisafontes.com.br/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Áreas atendidas",
+      "item": "https://elisafontes.com.br/areas-atendidas"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": bairro.name,
+      "item": `https://elisafontes.com.br/areas-atendidas/${bairro.slug}`
+    }
+  ]
+};
 ---
 
 <Layout
   title={`Psicóloga em ${bairro.name}, Niterói | Elisa Fontes`}
   description={`Psicóloga em ${bairro.name}, Niterói. Elisa Fontes oferece atendimento psicanalítico presencial e online. 38 anos de experiência. CRP 05/62794.`}
-  schema={locationSchema}
+  schema={[locationSchema, breadcrumbSchema]}
 >
   <Header />
 
@@ -89,6 +114,7 @@ const locationSchema = {
           <a
             href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
             class="inline-block bg-accent text-white px-8 py-3 rounded-sm font-medium hover:bg-accent/90 transition-colors"
+            data-whatsapp-cta={`area_${bairro.slug}_hero`}
           >
             Agendar consulta
           </a>
@@ -185,6 +211,7 @@ const locationSchema = {
             <a
               href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
               class="block text-center bg-[#25D366] text-white px-4 py-3 rounded-sm font-medium hover:bg-[#1ebe5b] transition-colors text-sm mb-3"
+              data-whatsapp-cta={`area_${bairro.slug}_sidebar`}
             >
               Agendar pelo WhatsApp
             </a>

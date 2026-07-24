@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const pageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": ["Psychologist", "LocalBusiness"],
+    "name": "Elisa Fontes - Atendimento psicologico em Sao Francisco, Niteroi",
+    "description": "Atendimento psicologico presencial em Sao Francisco, Niteroi, com Elisa Fontes, e possibilidade de terapia online.",
+    "url": "https://elisafontes.com.br/atendimento-psicologico-sao-francisco-niteroi",
+    "telephone": "+55-21-98744-9887",
+    "email": "psi.elisafontes@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Rui Barbosa, 29 - Sala 213",
+      "addressLocality": "Sao Francisco",
+      "addressRegion": "Niteroi, RJ",
+      "postalCode": "24360-400",
+      "addressCountry": "BR"
+    },
+    "areaServed": [
+      { "@type": "Neighborhood", "name": "Sao Francisco" },
+      { "@type": "City", "name": "Niteroi" },
+      { "@type": "Country", "name": "Brasil" }
+    ],
+    "medicalSpecialty": "Psychology",
+    "knowsAbout": ["Psicoterapia", "Psicanalise", "Terapia online", "Ansiedade"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Onde fica o consultorio em Sao Francisco?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O consultorio fica na Rua Rui Barbosa, 29 - Sala 213, em Sao Francisco, Niteroi. A disponibilidade presencial deve ser confirmada diretamente no primeiro contato."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quem mora em outro bairro de Niteroi tambem pode procurar atendimento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O consultorio em Sao Francisco pode atender pessoas de bairros proximos como Icarai, Charitas, Santa Rosa, Centro, Pendotiba e outras regioes de Niteroi, conforme disponibilidade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Existe atendimento online alem do presencial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Elisa tambem pode atender online, quando esse formato faz sentido para a pessoa e ha privacidade adequada para a sessao."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Atendimento psicologico em Sao Francisco, Niteroi | Elisa Fontes"
+  description="Atendimento psicologico em Sao Francisco, Niteroi, com Elisa Fontes. Veja localizacao, bairros proximos, formatos de atendimento e como tirar duvidas."
+  schema={pageSchema}
+>
+  <Header />
+
+  <main class="bg-primary-bg">
+    <section class="bg-card-bg/40 px-6 py-16 md:px-12 md:py-20 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+            Consultorio em Sao Francisco
+          </p>
+          <h1 class="mb-6 font-heading text-4xl text-text-main md:text-5xl">
+            Atendimento psicologico em Sao Francisco, Niteroi
+          </h1>
+          <p class="mb-8 max-w-2xl text-lg leading-8 text-text-main/75">
+            Elisa Fontes atende em Sao Francisco, Niteroi, em um espaco voltado para escuta
+            clinica, continuidade e cuidado com a vida emocional. O primeiro contato serve para
+            entender disponibilidade, formato e proximos passos.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Perguntar sobre atendimento"
+              ctaId="sao_francisco_hero"
+              className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+            />
+            <a
+              href="/psicologa-em-niteroi"
+              class="inline-flex justify-center rounded-sm border border-accent px-6 py-3 font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Ver psicologa em Niteroi
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <h2 class="mb-4 font-heading text-2xl text-text-main">Informacoes do consultorio</h2>
+          <dl class="space-y-4 text-sm text-text-main/75">
+            <div>
+              <dt class="font-semibold text-text-main">Endereco</dt>
+              <dd>Rua Rui Barbosa, 29 - Sala 213, Sao Francisco, Niteroi</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-text-main">Bairros proximos</dt>
+              <dd>Icarai, Charitas, Santa Rosa, Centro, Pendotiba e regioes vizinhas</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-text-main">Formatos</dt>
+              <dd>Atendimento presencial e terapia online, conforme disponibilidade</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-text-main">Contato inicial</dt>
+              <dd>Mensagem breve pelo WhatsApp para tirar duvidas praticas</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <h2 class="font-heading text-3xl text-text-main">
+            Por que a localizacao pode ajudar na continuidade
+          </h2>
+          <p class="mt-4 leading-8 text-text-main/70">
+            A terapia costuma depender de regularidade. Quando o consultorio cabe melhor na rotina,
+            fica mais facil sustentar o processo sem transformar cada sessao em um esforco logistico.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Para quem circula pela zona sul de Niteroi</h3>
+            <p class="leading-7 text-text-main/70">
+              Sao Francisco pode ser uma opcao acessivel para quem mora, trabalha ou estuda perto de Icarai, Charitas e Santa Rosa.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Combinados claros desde o inicio</h3>
+            <p class="leading-7 text-text-main/70">
+              Horario, frequencia, formato e remarcacoes devem ser alinhados antes de iniciar.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Possibilidade de atendimento online</h3>
+            <p class="leading-7 text-text-main/70">
+              Quando o deslocamento fica dificil, o online pode ajudar a manter continuidade, se houver privacidade.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Sem promessa de resultado rapido</h3>
+            <p class="leading-7 text-text-main/70">
+              O cuidado clinico exige escuta, tempo e uma avaliacao singular de cada situacao.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-stone-200 bg-white px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">
+          Como iniciar o contato
+        </h2>
+        <div class="space-y-5 leading-8 text-text-main/75">
+          <p>
+            Voce nao precisa explicar toda a sua historia por mensagem. Um primeiro contato pode
+            ser simples: perguntar sobre horarios, atendimento presencial em Sao Francisco,
+            possibilidade de terapia online e como funciona a primeira conversa.
+          </p>
+          <p>
+            Assuntos sensiveis podem ser cuidados com mais seguranca dentro da sessao. Antes disso,
+            o objetivo e entender se ha disponibilidade e se o formato faz sentido para o seu momento.
+          </p>
+          <p>
+            Se a sua duvida principal e o inicio do processo, veja tambem o artigo sobre
+            <a href="/blog/o-que-acontece-primeira-sessao-terapia" class="text-accent underline">primeira sessao de terapia</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">Perguntas comuns</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              O atendimento e apenas para quem mora em Sao Francisco?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Nao. Pessoas de outros bairros de Niteroi tambem podem procurar atendimento,
+              conforme disponibilidade e possibilidade de deslocamento.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Posso alternar entre presencial e online?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Essa possibilidade deve ser combinada diretamente com Elisa. A escolha do formato
+              considera disponibilidade, privacidade e necessidade clinica.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              O que devo perguntar antes de agendar?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Vale perguntar sobre horarios, frequencia, valor, formato de atendimento,
+              remarcacoes e como funciona a primeira sessao.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-card-bg/50 px-6 py-14 text-center md:px-12 lg:px-20">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-4 font-heading text-3xl text-text-main">
+          Quer tirar duvidas sobre atendimento em Sao Francisco?
+        </h2>
+        <p class="mb-6 leading-8 text-text-main/70">
+          Envie uma mensagem breve para entender disponibilidade, atendimento presencial em
+          Niteroi, terapia online e proximos passos.
+        </p>
+        <WhatsAppButton
+          label="Conversar pelo WhatsApp"
+          ctaId="sao_francisco_footer"
+          className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

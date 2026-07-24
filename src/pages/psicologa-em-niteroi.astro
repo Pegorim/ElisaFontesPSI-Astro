@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const pageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": ["Psychologist", "LocalBusiness"],
+    "name": "Elisa Fontes - Psicologa em Niteroi",
+    "description": "Psicologa clinica em Niteroi, com atendimento presencial em Sao Francisco e terapia online.",
+    "url": "https://elisafontes.com.br/psicologa-em-niteroi",
+    "telephone": "+55-21-98744-9887",
+    "email": "psi.elisafontes@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Rui Barbosa, 29 - Sala 213",
+      "addressLocality": "Sao Francisco",
+      "addressRegion": "Niteroi, RJ",
+      "postalCode": "24360-400",
+      "addressCountry": "BR"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Niteroi" },
+      { "@type": "Country", "name": "Brasil" }
+    ],
+    "medicalSpecialty": "Psychology",
+    "knowsAbout": ["Psicanalise", "Psicoterapia", "Ansiedade", "Terapia online"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Elisa atende presencialmente em Niteroi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O consultorio fica na Rua Rui Barbosa, 29 - Sala 213, em Sao Francisco, Niteroi. A disponibilidade de horarios deve ser confirmada no primeiro contato."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tambem existe atendimento online?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Elisa tambem atende online, desde que a pessoa tenha privacidade e uma conexao adequada para a sessao."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que perguntar antes de agendar terapia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vale perguntar sobre formato de atendimento, disponibilidade, frequencia das sessoes, valor, remarcacoes e como funciona a primeira conversa."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Psicologa em Niteroi | Elisa Fontes"
+  description="Psicologa em Niteroi com atendimento presencial em Sao Francisco e terapia online. Entenda como escolher uma profissional e como falar com Elisa Fontes."
+  schema={pageSchema}
+>
+  <Header />
+
+  <main class="bg-primary-bg">
+    <section class="px-6 py-16 md:px-12 md:py-20 lg:px-20 bg-card-bg/40">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">
+            Atendimento presencial e online
+          </p>
+          <h1 class="mb-6 font-heading text-4xl text-text-main md:text-5xl">
+            Psicologa em Niteroi para comecar ou retomar a terapia
+          </h1>
+          <p class="mb-8 max-w-2xl text-lg leading-8 text-text-main/75">
+            Elisa Fontes atende em Sao Francisco, Niteroi, e tambem online. O primeiro contato
+            pode ser simples: entender disponibilidade, formato de atendimento e se esse e um bom
+            momento para iniciar um processo terapeutico.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Falar com Elisa"
+              ctaId="psicologa_niteroi_hero"
+              className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+            />
+            <a
+              href="/contato"
+              class="inline-flex justify-center rounded-sm border border-accent px-6 py-3 font-medium text-accent transition-colors hover:bg-accent/10"
+            >
+              Ver contato e localizacao
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-6 shadow-sm">
+          <h2 class="mb-4 font-heading text-2xl text-text-main">Informacoes rapidas</h2>
+          <dl class="space-y-4 text-sm text-text-main/75">
+            <div>
+              <dt class="font-semibold text-text-main">Consultorio</dt>
+              <dd>Rua Rui Barbosa, 29 - Sala 213, Sao Francisco, Niteroi</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-text-main">Formatos</dt>
+              <dd>Atendimento presencial em Niteroi e terapia online</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-text-main">Abordagem</dt>
+              <dd>Escuta clinica orientada pela psicanalise</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-text-main">Proximo passo</dt>
+              <dd>Enviar uma mensagem breve para tirar duvidas sobre horarios e formato</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <h2 class="font-heading text-3xl text-text-main">
+            Como escolher uma psicologa em Niteroi
+          </h2>
+          <p class="mt-4 leading-8 text-text-main/70">
+            A escolha nao precisa ser apressada. Alem de localizacao, vale observar registro
+            profissional, forma de trabalho, clareza na comunicacao e a sensacao de respeito no
+            primeiro contato.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Registro e experiencia</h3>
+            <p class="leading-7 text-text-main/70">
+              Confirme CRP, trajetoria clinica, publico atendido e abordagem de trabalho.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Formato de atendimento</h3>
+            <p class="leading-7 text-text-main/70">
+              Veja se o presencial em Niteroi, o online ou uma combinacao dos dois faz sentido.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Primeira conversa</h3>
+            <p class="leading-7 text-text-main/70">
+              Pergunte como funciona a primeira sessao, duracao, frequencia e remarcacoes.
+            </p>
+          </div>
+          <div class="rounded-lg bg-white p-6 shadow-sm">
+            <h3 class="mb-2 font-heading text-xl text-text-main">Cuidado com promessas</h3>
+            <p class="leading-7 text-text-main/70">
+              Um atendimento serio nao promete cura rapida nem resultado garantido.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-stone-200 bg-white px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">
+          Atendimento em Sao Francisco e terapia online
+        </h2>
+        <div class="space-y-5 leading-8 text-text-main/75">
+          <p>
+            O consultorio em Sao Francisco pode ser conveniente para quem mora ou circula por
+            bairros como Icarai, Charitas, Santa Rosa, Centro e Pendotiba. Para outras rotinas,
+            o atendimento online pode facilitar a continuidade do processo.
+          </p>
+          <p>
+            O mais importante e que o espaco da sessao seja privado, regular e possivel de manter.
+            No primeiro contato, voce pode perguntar sobre disponibilidade presencial, online e
+            proximos passos antes de agendar. Se quiser entender melhor o formato a distancia,
+            veja tambem a pagina de <a href="/terapia-online" class="text-accent underline">terapia online</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 md:px-12 lg:px-20">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-6 font-heading text-3xl text-text-main">Perguntas comuns</h2>
+        <div class="space-y-4">
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Preciso explicar tudo na primeira mensagem?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Nao. Voce pode enviar uma mensagem breve dizendo que deseja saber sobre atendimento,
+              horarios e formato. Assuntos sensiveis podem ser cuidados com mais seguranca na sessao.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Terapia online pode funcionar?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Pode ser uma boa alternativa quando ha privacidade, conexao estavel e compromisso
+              com o horario. A indicacao depende da situacao de cada pessoa.
+            </p>
+          </details>
+          <details class="rounded-lg bg-white p-6 shadow-sm">
+            <summary class="cursor-pointer font-heading text-lg text-text-main">
+              Como saber se e hora de procurar terapia?
+            </summary>
+            <p class="mt-4 leading-7 text-text-main/70">
+              Ansiedade frequente, tristeza persistente, conflitos repetidos, sobrecarga ou desejo
+              de se conhecer melhor podem ser motivos suficientes para conversar com uma profissional.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-card-bg/50 px-6 py-14 text-center md:px-12 lg:px-20">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="mb-4 font-heading text-3xl text-text-main">
+          Quer tirar duvidas antes de agendar?
+        </h2>
+        <p class="mb-6 leading-8 text-text-main/70">
+          Envie uma mensagem para entender disponibilidade, atendimento presencial em Niteroi,
+          terapia online e como funciona a primeira conversa.
+        </p>
+        <WhatsAppButton
+          label="Conversar pelo WhatsApp"
+          ctaId="psicologa_niteroi_footer"
+          className="justify-center rounded-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

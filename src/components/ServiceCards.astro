@@ -6,16 +6,19 @@ const specialties = [
     title: 'Ansiedade e sobrecarga emocional',
     description:
       'Para quem sente a mente acelerada, dificuldade para descansar, medo constante ou sensação de estar sempre no limite.',
+    href: '/psicoterapia-para-ansiedade',
   },
   {
     title: 'Autoconhecimento e relações',
     description:
       'Um espaço para compreender padrões, amadurecer escolhas e lidar melhor com vínculos afetivos, familiares e profissionais.',
+    href: '/psicanalise-e-psicoterapia',
   },
   {
     title: 'Adolescentes +16 e adultos',
     description:
       'Atendimento para fases de transição, conflitos internos, autoestima, luto, tristeza persistente e outros desafios emocionais.',
+    href: '/psicoterapia-adolescentes',
   }
 ];
 
@@ -53,6 +56,7 @@ const steps = [
               label="Quero conversar sobre meu caso"
               className="justify-center rounded-full bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent/90"
               showIcon={false}
+              ctaId="home_services"
             />
           </div>
         </div>
@@ -63,6 +67,9 @@ const steps = [
           <article class="flex flex-col rounded-3xl border border-stone-200 bg-white p-6 shadow-sm">
             <h3 class="font-heading text-2xl leading-tight text-text-main min-h-[4.5rem]">{item.title}</h3>
             <p class="mt-4 text-text-main/75 leading-7">{item.description}</p>
+            <a href={item.href} class="mt-5 text-sm font-medium text-accent underline hover:opacity-80">
+              Saiba mais
+            </a>
           </article>
         ))}
       </div>

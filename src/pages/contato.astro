@@ -54,6 +54,7 @@ const contactSchema = {
           <a
             href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o.&utm_source=site&utm_medium=cta&utm_campaign=whatsapp"
             class="block bg-card-bg p-6 rounded-lg hover:shadow-lg transition-shadow group"
+            data-whatsapp-cta="contact_card"
           >
             <div class="flex items-center gap-4">
               <div class="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center">
@@ -157,15 +158,89 @@ const contactSchema = {
             <a
               href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o.&utm_source=site&utm_medium=cta&utm_campaign=whatsapp"
               class="block w-full bg-[#25D366] text-white text-center py-4 rounded-lg font-medium hover:bg-[#1ebe5b] transition-colors"
+              data-whatsapp-cta="contact_main_cta"
             >
               Agendar pelo WhatsApp
             </a>
             <p class="text-center text-text-main/50 text-sm">
               Atendimento online para todo o Brasil
             </p>
+            <p class="text-center text-text-main/50 text-sm leading-6">
+              Ao enviar uma mensagem, voce compartilha os dados que escolher informar para que Elisa responda ao seu contato. Evite enviar informacoes sensiveis antes de combinar o atendimento.
+            </p>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="max-w-4xl mx-auto mt-12">
+      <div class="bg-card-bg rounded-lg p-8">
+        <h2 class="font-heading text-2xl text-text-main mb-6">
+          Como funciona o primeiro contato
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <p class="text-sm font-medium text-accent mb-2">1. Mensagem inicial</p>
+            <p class="text-text-main/70 leading-7">
+              Voce envia uma mensagem breve contando que deseja iniciar ou retomar a terapia.
+            </p>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-accent mb-2">2. Alinhamento</p>
+            <p class="text-text-main/70 leading-7">
+              Elisa responde com os formatos de atendimento, disponibilidade e proximos passos.
+            </p>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-accent mb-2">3. Primeira sessao</p>
+            <p class="text-text-main/70 leading-7">
+              A primeira conversa ajuda a entender sua demanda e explicar como o processo terapeutico pode seguir.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto mt-12">
+      <h2 class="font-heading text-2xl text-text-main mb-6">
+        Duvidas comuns
+      </h2>
+      <div class="space-y-4">
+        <details class="bg-card-bg rounded-lg p-6">
+          <summary class="font-heading text-lg text-text-main cursor-pointer">
+            O atendimento pode ser online?
+          </summary>
+          <p class="text-text-main/70 leading-7 mt-4">
+            Sim. O atendimento online permite fazer terapia de onde voce estiver, desde que haja privacidade e uma conexao estavel para a sessao.
+          </p>
+        </details>
+        <details class="bg-card-bg rounded-lg p-6">
+          <summary class="font-heading text-lg text-text-main cursor-pointer">
+            Tambem existe atendimento presencial?
+          </summary>
+          <p class="text-text-main/70 leading-7 mt-4">
+            Sim. O consultorio fica na Rua Rui Barbosa, 29 - Sala 213, em Niteroi. A disponibilidade de horarios precisa ser confirmada diretamente com Elisa.
+          </p>
+        </details>
+        <details class="bg-card-bg rounded-lg p-6">
+          <summary class="font-heading text-lg text-text-main cursor-pointer">
+            Preciso explicar tudo na primeira mensagem?
+          </summary>
+          <p class="text-text-main/70 leading-7 mt-4">
+            Nao. A primeira mensagem pode ser simples. Evite enviar detalhes sensiveis antes de combinar o atendimento; esses temas podem ser cuidados com mais seguranca durante a sessao.
+          </p>
+        </details>
+        <details class="bg-card-bg rounded-lg p-6">
+          <summary class="font-heading text-lg text-text-main cursor-pointer">
+            A primeira sessao ja define todo o processo?
+          </summary>
+          <p class="text-text-main/70 leading-7 mt-4">
+            A primeira sessao e um inicio de escuta e alinhamento. O ritmo, a frequencia e os objetivos do processo sao construidos com cuidado ao longo do acompanhamento.
+          </p>
+        </details>
       </div>
     </section>
   </main>

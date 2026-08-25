@@ -151,7 +151,7 @@ A medicação, quando necessária, funciona melhor quando combinada com psicoter
 Algumas práticas podem ajudar a reduzir os sintomas de ansiedade:
 
 - **Exercícios físicos regulares**: liberam endorfinas e reduzem o cortisol
-- **Higiene do sono**: dormir bem é fundamental para a saúde mental. Veja como a [ansiedade pode atrapalhar seu sono](/blog/ansiedade-insonia)
+- **Higiene do sono**: dormir bem é fundamental para a saúde mental. Conheça a [psicoterapia para ansiedade](/psicoterapia-para-ansiedade)
 - **Alimentação equilibrada**: evitar excesso de cafeína, álcool e açúcar
 - **Técnicas de relaxamento**: meditação, mindfulness, respiração diafragmática
 - **Reduzir o tempo em redes sociais e notícias**: o excesso de informação pode aumentar a ansiedade

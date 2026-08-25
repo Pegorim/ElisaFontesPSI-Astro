@@ -124,7 +124,7 @@ Mesmo sem esforço físico, a ansiedade esgota. Manter o corpo em estado de aler
 
 ### Problemas de Sono
 
-Dificuldade para dormir, acordar no meio da noite ou ter sono não reparador são consequências diretas da ansiedade. Entenda melhor essa relação em [por que a ansiedade não deixa você dormir](/blog/ansiedade-insonia).
+Dificuldade para dormir, acordar no meio da noite ou ter sono não reparador são consequências diretas da ansiedade. Conheça caminhos de cuidado em [psicoterapia para ansiedade](/psicoterapia-para-ansiedade).
 
 ## Quando os Sintomas Físicos Indicam Ansiedade?
 

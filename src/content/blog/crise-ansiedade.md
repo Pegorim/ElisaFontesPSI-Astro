@@ -154,7 +154,7 @@ O que aconteceu antes da crise? Quais situações, pensamentos ou sensações co
 
 ### Cuide do Básico
 
-- **Sono**: a privação de sono aumenta a vulnerabilidade a crises. Entenda mais em [por que a ansiedade não deixa você dormir](/blog/ansiedade-insonia)
+- **Sono**: a privação de sono aumenta a vulnerabilidade a crises. Conheça também [caminhos de cuidado para a ansiedade](/psicoterapia-para-ansiedade)
 - **Alimentação**: pular refeições e consumir muita cafeína podem contribuir para crises
 - **Exercício**: atividade física regular reduz a ansiedade de base
 

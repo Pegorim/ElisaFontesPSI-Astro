@@ -74,7 +74,7 @@ Problemas com colegas, subordinados ou superiores. Ter que conviver diariamente 
 
 ### Sono Prejudicado
 
-A mente não desliga. Você deita e começa a pensar no trabalho, planejar o dia seguinte, reviver conversas. O sono que vem é leve e não descansa. Entenda essa relação em [por que a ansiedade não deixa você dormir](/blog/ansiedade-insonia).
+A mente não desliga. Você deita e começa a pensar no trabalho, planejar o dia seguinte, reviver conversas. O sono que vem é leve e não descansa. Veja como a [psicoterapia pode ajudar no cuidado com a ansiedade](/psicoterapia-para-ansiedade).
 
 ### Relacionamentos Afetados
 

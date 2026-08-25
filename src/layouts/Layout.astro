@@ -37,16 +37,11 @@ const defaultSchema = {
     "image": imageURL.href,
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Rua Rui Barbosa, 29 - Sala 213",
-        "addressLocality": "São Francisco",
-        "addressRegion": "Niterói, RJ",
-        "postalCode": "24360-400",
+        "streetAddress": "Avenida Rui Barbosa, 29 - Sala 213, São Francisco",
+        "addressLocality": "Niterói",
+        "addressRegion": "RJ",
+        "postalCode": "24360-440",
         "addressCountry": "BR"
-    },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -22.8833,
-        "longitude": -43.1036
     },
     "openingHours": ["Mo-Sa 10:00-20:00"],
     "priceRange": "$$",
@@ -118,6 +113,20 @@ const structuredData = customSchemas.length
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
 		<title>{title}</title>
+
+        {import.meta.env.PROD && (
+            <>
+                <!-- Google Analytics 4 (installed directly; do not duplicate in GTM) -->
+                <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-6RJEY1WCFN"></script>
+                <script is:inline>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-6RJEY1WCFN');
+                </script>
+                <!-- End Google Analytics 4 -->
+            </>
+        )}
 
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -109,7 +109,7 @@ A psicoterapia para ansiedade pode trazer:
 - **Mais controle emocional**: você não elimina a ansiedade, mas aprende a não ser controlado por ela
 - **Melhora nos relacionamentos**: menos irritabilidade, mais presença
 - **Melhor desempenho**: no trabalho, nos estudos, nas atividades diárias
-- **Qualidade de sono**: muitas pessoas relatam melhora significativa — entenda mais sobre [ansiedade e insônia](/blog/ansiedade-insonia)
+- **Qualidade de sono**: muitas pessoas relatam melhora significativa — conheça o atendimento de [psicoterapia para ansiedade](/psicoterapia-para-ansiedade)
 - **Autoconhecimento**: compreender a si mesmo em um nível mais profundo
 - **Prevenção de recaídas**: as habilidades aprendidas protegem contra futuros episódios
 

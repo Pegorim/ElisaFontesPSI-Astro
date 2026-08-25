@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { isPublishedPost } from '../utils/blog';
 
 interface Props {
   limit?: number;
@@ -7,7 +8,7 @@ interface Props {
 
 const { limit } = Astro.props;
 
-const allPosts = await getCollection('blog');
+const allPosts = (await getCollection('blog')).filter(isPublishedPost);
 const sortedPosts = allPosts.sort((a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const posts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
 

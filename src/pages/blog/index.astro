@@ -3,8 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
+import { isPublishedPost } from '../../utils/blog';
 
-const posts = await getCollection('blog');
+const posts = (await getCollection('blog')).filter(isPublishedPost);
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 // Blog schema

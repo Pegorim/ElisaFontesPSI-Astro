@@ -15,6 +15,7 @@ const posts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
 // Helper to format date
 const formatDate = (date: Date) => {
   return new Intl.DateTimeFormat('pt-BR', {
+    timeZone: 'UTC',
     day: 'numeric',
     month: 'long',
     year: 'numeric'

@@ -1,7 +1,7 @@
 ---
 title: "Autoestima e Autocritica: Quando a Cobranca Interna Passa do Limite"
 description: "Entenda a diferenca entre desejo de melhorar e autocritica excessiva, e quando a terapia pode ajudar a construir uma relacao mais cuidadosa consigo."
-pubDate: 2026-09-02
+pubDate: 2026-08-31
 category: "AUTOESTIMA"
 image: "/images/blog-ajuda.jpg"
 ---

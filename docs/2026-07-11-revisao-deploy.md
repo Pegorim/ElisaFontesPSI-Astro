@@ -37,6 +37,26 @@ Este checklist organiza o pacote local preparado entre 2026-07-06 e 2026-07-11. 
 - Rascunho de GBP post e legenda curta para `Crise de Panico`.
 - Artigo `Tristeza ou Depressao: Quando Procurar Ajuda Profissional`.
 - Rascunho de GBP post e legenda curta para `Tristeza ou Depressao`.
+- Artigo `Burnout e Esgotamento: Quando o Trabalho Invade a Vida Inteira`.
+- Rascunho de GBP post e legenda curta para `Burnout e Esgotamento`.
+- Artigo `Familia, Culpa e Expectativas: Como a Terapia Ajuda a Organizar Conflitos`.
+- Rascunho de GBP post e legenda curta para `Familia, Culpa e Expectativas`.
+- Artigo `Mudancas de Vida: Por Que Transicoes Mexem Tanto Com a Gente`.
+- Rascunho de GBP post e legenda curta para `Mudancas de Vida`.
+- Artigo `Medo de Comecar Terapia: Duvidas Comuns Antes da Primeira Conversa`.
+- Rascunho de GBP post e legenda curta para `Medo de Comecar Terapia`.
+- Artigo `Atendimento Psicologico em Sao Francisco, Niteroi: Localizacao e Como Chegar`.
+- Rascunho de GBP post e legenda curta para `Atendimento Psicologico em Sao Francisco`.
+- Artigo `Terapia Presencial ou Online: Como Escolher o Melhor Formato Para Voce`.
+- Rascunho de GBP post e legenda curta para `Terapia Presencial ou Online`.
+- Artigo `Quando Retomar a Terapia Depois de Uma Pausa`.
+- Rascunho de GBP post e legenda curta para `Quando Retomar a Terapia Depois de Uma Pausa`.
+- Artigo `Saude Mental no Fim do Ano: Cansaco, Cobrancas e Balancos Internos`.
+- Rascunho de GBP post e legenda curta para `Saude Mental no Fim do Ano`.
+- Artigo `Como Manter o Processo Terapeutico Durante Viagens e Rotina Instavel`.
+- Rascunho de GBP post e legenda curta para `Terapia Durante Viagens e Rotina Instavel`.
+- Artigo `Perguntas Importantes Antes de Agendar Terapia`.
+- Rascunho de GBP post e legenda curta para `Perguntas Antes de Agendar Terapia`.
 - Links internos entre artigos, paginas de servico, contato e sobre.
 
 ## Validacao tecnica de hoje
@@ -76,7 +96,35 @@ Este checklist organiza o pacote local preparado entre 2026-07-06 e 2026-07-11. 
   - `/blog/crise-de-panico/`
 - Apos a rotina de 2026-07-24, validar tambem:
   - `/blog/tristeza-ou-depressao/`
+- Apos a rotina de 2026-07-25, validar tambem:
+  - `/blog/burnout-e-esgotamento/`
+- Apos a rotina de 2026-08-02, validar tambem:
+  - `/blog/familia-culpa-expectativas/`
+- Apos a rotina de 2026-08-03, validar tambem:
+  - `/blog/mudancas-de-vida/`
+- Apos a rotina de 2026-08-04, validar tambem:
+  - `/blog/medo-de-comecar-terapia/`
+- Apos a rotina de 2026-08-05, validar tambem:
+  - `/psicoterapia-adolescentes/`
+- Apos a rotina de 2026-08-20, validar tambem:
+  - `/blog/atendimento-psicologico-sao-francisco-niteroi/`
+- Apos a rotina de 2026-08-21, validar tambem:
+  - `/blog/terapia-presencial-ou-online/`
+- Apos a rotina de 2026-08-24, validar tambem:
+  - `/blog/quando-retomar-terapia-depois-de-uma-pausa/`
+- Apos a rotina de 2026-08-25, validar tambem:
+  - `/blog/saude-mental-fim-de-ano/`
+- Apos a rotina de 2026-08-26, validar tambem:
+  - `/blog/manter-terapia-durante-viagens-rotina-instavel/`
+- Apos a rotina de 2026-08-27, validar tambem:
+  - `/blog/perguntas-importantes-antes-de-agendar-terapia/`
+- Apos a rotina de 2026-08-28, usar tambem:
+  - `docs/2026-08-28-backlog-revisao-publicacao.md`
+- Apos a rotina de 2026-08-29, usar tambem:
+  - `docs/2026-08-29-qa-ctas-links-internos.md`
 - Os avisos anteriores de `Duplicate id` nao apareceram no build de hoje.
+- Build de 2026-08-29 passou com 84 paginas; checagem automatizada encontrou 0 links internos Markdown quebrados em 30 posts.
+- Pontos de malha interna para revisao antes de publicar em lote: `/blog/autoconhecimento/` e `/blog/como-saber-se-preciso-fazer-terapia/` nao tem link interno Markdown no corpo, embora recebam CTA global pelo template.
 
 ## Revisao editorial antes de publicar
 
@@ -104,6 +152,8 @@ Este checklist organiza o pacote local preparado entre 2026-07-06 e 2026-07-11. 
   - `terapia_online_footer`
   - `ansiedade_hero`
   - `ansiedade_footer`
+  - `adolescentes_hero`
+  - `adolescentes_footer`
   - `blog_<slug>_cta`
 - Depois do deploy, validar no site publico:
   - HTTP 200 nas rotas novas.
@@ -126,7 +176,12 @@ Este checklist organiza o pacote local preparado entre 2026-07-06 e 2026-07-11. 
 
 ## Proximo passo recomendado
 
-Se os bloqueios comerciais continuarem, a proxima atividade local desbloqueada e revisar ou completar o pacote de 2026-10-07:
+Se os bloqueios comerciais continuarem, a proxima atividade local desbloqueada e adiantar o pacote de 2026-12-02:
 
-- adiantar o proximo pacote datado ainda nao preparado, sobre burnout e esgotamento;
+- pacote de 2026-11-18 ja preparado localmente em 2026-08-24;
+- pacote de 2026-11-25 ja preparado localmente em 2026-08-25;
+- pacote de 2026-12-02 ja preparado localmente em 2026-08-26;
+- pacote de 2026-12-09 ja preparado localmente em 2026-08-27;
+- depois disso, nao ha novos pacotes datados de blog no calendario atual antes da revisao de 2026-12-16;
+- backlog de revisao/publicacao organizado em 2026-08-28;
 - manter materiais de distribuicao apenas como rascunho, sem publicar nem enviar.

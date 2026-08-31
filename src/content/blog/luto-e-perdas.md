@@ -1,7 +1,7 @@
 ---
 title: "Luto e Perdas: Por Que Algumas Dores Precisam Ser Elaboradas Com Tempo"
 description: "Entenda por que o luto nao segue uma linha reta, quais formas de perda podem atravessar a vida e quando a terapia pode oferecer um espaco de elaboracao."
-pubDate: 2026-09-09
+pubDate: 2026-08-31
 category: "LUTO"
 image: "/images/blog-conversa.jpg"
 ---

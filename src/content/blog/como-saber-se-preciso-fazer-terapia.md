@@ -74,7 +74,7 @@ Isso já é material suficiente para começar. A função da terapia não é exi
 
 ## O Que Acontece na Primeira Conversa
 
-A primeira sessão costuma ser um momento de acolhimento e compreensão inicial. A psicóloga vai escutar o que trouxe você até ali, fazer perguntas sobre sua história, entender sua rotina e explicar como o processo funciona.
+A primeira sessão costuma ser um momento de acolhimento e compreensão inicial. A psicóloga vai escutar o que trouxe você até ali, fazer perguntas sobre sua história, entender sua rotina e explicar como o processo funciona. Se essa etapa ainda parece nebulosa, o artigo sobre [o que acontece na primeira sessão de terapia](/blog/o-que-acontece-primeira-sessao-terapia) aprofunda esse momento.
 
 Você não precisa contar tudo de uma vez. Também não precisa falar de assuntos para os quais ainda não se sente pronto. A confiança é construída com tempo.
 
@@ -107,7 +107,7 @@ Começar não significa que você terá que resolver tudo rapidamente. Significa
 
 Você não precisa ter certeza absoluta para conversar com uma profissional. Pode começar tirando dúvidas sobre horários, formato de atendimento, abordagem e como funciona a primeira sessão.
 
-Se você mora em Niterói, busca atendimento presencial em São Francisco ou prefere terapia online, esse primeiro contato pode ajudar a entender se faz sentido iniciar agora.
+Se você mora em Niterói, busca atendimento presencial em São Francisco ou prefere [terapia online](/terapia-online), esse primeiro contato pode ajudar a entender se faz sentido iniciar agora.
 
 Fazer terapia é uma decisão pessoal. Mas você não precisa esperar que a vida fique insustentável para buscar apoio. Se algo em você está pedindo escuta, esse já pode ser um bom motivo para começar.
 

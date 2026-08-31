@@ -1,7 +1,7 @@
 ---
 title: "Crise de Panico: Entendendo o Medo do Corpo Perder o Controle"
 description: "Entenda o que pode acontecer em uma crise de panico, por que os sintomas assustam tanto e quando procurar acompanhamento psicologico."
-pubDate: 2026-09-23
+pubDate: 2026-08-31
 category: "ANSIEDADE"
 image: "/images/blog-crise.jpg"
 ---

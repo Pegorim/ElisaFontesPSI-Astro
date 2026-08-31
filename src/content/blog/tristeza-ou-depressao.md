@@ -1,7 +1,7 @@
 ---
 title: "Tristeza ou Depressao: Quando Procurar Ajuda Profissional"
 description: "Entenda diferencas importantes entre tristeza e depressao, sinais de alerta e quando buscar acompanhamento psicologico sem depender de autodiagnostico."
-pubDate: 2026-09-30
+pubDate: 2026-08-31
 category: "SAUDE MENTAL"
 image: "/images/depression-content.jpg"
 ---

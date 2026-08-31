@@ -1,7 +1,7 @@
 ---
 title: "Relacionamentos e Limites: Por Que Dizer Nao Pode Ser Tao Dificil"
 description: "Entenda por que estabelecer limites pode gerar culpa, medo ou conflito, e como a terapia pode ajudar a reconhecer relacoes mais cuidadosas."
-pubDate: 2026-09-16
+pubDate: 2026-08-31
 category: "RELACIONAMENTOS"
 image: "/images/blog-grupo.jpg"
 ---

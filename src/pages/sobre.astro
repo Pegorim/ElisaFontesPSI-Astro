@@ -4,12 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BlogGrid from '../components/BlogGrid.astro';
 import Testimonials from '../components/Testimonials.astro';
-import { getEntry } from 'astro:content';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { siteContact } from '../data/site';
+import { getEntry, render } from 'astro:content';
 
 const entry = await getEntry('pages', 'sobre');
 if (!entry) throw new Error('Could not find about page content');
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 // AboutPage schema
 const aboutSchema = {
@@ -34,10 +36,10 @@ const aboutSchema = {
       "name": "Consultório Elisa Fontes",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Avenida Rui Barbosa, 29 - Sala 213, São Francisco",
-        "addressLocality": "Niterói",
-        "addressRegion": "RJ",
-        "postalCode": "24360-440",
+        "streetAddress": siteContact.streetAddress,
+        "addressLocality": siteContact.locality,
+        "addressRegion": siteContact.region,
+        "postalCode": siteContact.postalCode,
         "addressCountry": "BR"
       }
     }
@@ -130,14 +132,11 @@ const aboutSchema = {
         <p class="text-text-main/70 mb-6">
           Atendimento online para todo o Brasil e presencial em Niterói. Clique abaixo e fale comigo no WhatsApp.
         </p>
-        <a
-          href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o.&utm_source=site&utm_medium=cta&utm_campaign=whatsapp"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-full font-medium hover:bg-[#1ebe5b] transition-colors"
-          data-whatsapp-cta="about_midpage_cta"
-        >
-          <img src="/images/whatsapp-icon.svg" alt="" class="w-5 h-5 invert" />
-          Agendar pelo WhatsApp
-        </a>
+        <WhatsAppButton
+          label="Agendar pelo WhatsApp"
+          className="justify-center rounded-full bg-[#25D366] px-6 py-3 font-medium text-white transition-colors hover:bg-[#1ebe5b]"
+          ctaId="about_midpage_cta"
+        />
       </div>
     </section>
 

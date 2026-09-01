@@ -3,7 +3,7 @@ title: "O Que Acontece na Primeira Sessao de Terapia?"
 description: "Entenda como costuma ser a primeira conversa em terapia, que tipo de perguntas podem aparecer e por que voce nao precisa chegar com tudo organizado."
 pubDate: 2026-07-29
 category: "PRIMEIRA CONSULTA"
-image: "/images/blog-primeira-sessao.jpg"
+image: "/images/blog-conversa.jpg"
 ---
 
 A primeira sessao de terapia costuma vir acompanhada de muitas perguntas. Algumas pessoas chegam com ansiedade, outras com vergonha, curiosidade, medo de nao saber o que dizer ou expectativa de finalmente conseguir organizar algo que vem pesando ha tempo.

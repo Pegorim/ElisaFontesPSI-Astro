@@ -3,18 +3,38 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "EMDASH_LOCAL=true astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "build:local": "EMDASH_LOCAL=true astro build",
+    "start": "node ./dist/server/entry.mjs",
+    "preview": "EMDASH_LOCAL=true node ./dist/server/entry.mjs",
+    "cms:seed": "node ./scripts/generate-emdash-seed.mjs",
+    "check": "EMDASH_LOCAL=true astro check",
+    "test": "node --test tests/*.test.mjs",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/node": "^11.1.4",
+    "@astrojs/react": "^6.0.4",
+    "@astrojs/sitemap": "^3.7.3",
+    "@aws-sdk/client-s3": "^3.1118.0",
+    "@aws-sdk/s3-request-presigner": "^3.1118.0",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.11",
-    "tailwindcss": "^4.1.18"
+    "astro": "^7.2.8",
+    "better-sqlite3": "^13.0.3",
+    "emdash": "^0.35.0",
+    "pg": "^8.23.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwindcss": "^4.1.18",
+    "zod": "^4.4.3"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.12.0 <23"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "gray-matter": "^4.0.3",
+    "typescript": "^6.0.3"
   }
 }

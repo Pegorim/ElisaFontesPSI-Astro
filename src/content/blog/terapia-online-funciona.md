@@ -3,7 +3,7 @@ title: "Terapia Online Funciona? O Que Esperar do Atendimento a Distancia"
 description: "Entenda como funciona a terapia online, para quem ela pode fazer sentido, quais cuidados observar e como se preparar para a primeira conversa."
 pubDate: 2026-07-22
 category: "TERAPIA ONLINE"
-image: "/images/blog-terapia-online.jpg"
+image: "/images/blog-terapia.jpg"
 ---
 
 A terapia online se tornou uma possibilidade real para muitas pessoas que antes adiavam o cuidado por falta de tempo, distancia, mudancas de rotina ou dificuldade de deslocamento. Ela permite que a pessoa converse com uma psicologa em um espaco reservado, mesmo estando em outra cidade, estado ou pais.

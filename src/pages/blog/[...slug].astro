@@ -1,170 +1,160 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import BlogCTA from '../../components/BlogCTA.astro';
-import { getCollection, render } from 'astro:content';
-import { isPublishedPost } from '../../utils/blog';
+import { Image, PortableText } from 'emdash/ui';
 
-export async function getStaticPaths() {
-  const posts = (await getCollection('blog')).filter(isPublishedPost);
-  return posts.map((post) => ({
-    params: { slug: post.id.replace(/\.md$/, '') },
-    props: { post },
-  }));
+import BlogCTA from '../../components/BlogCTA.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import Layout from '../../layouts/Layout.astro';
+import {
+  formatBlogDate,
+  getBlogImage,
+  getBlogImageUrl,
+  getPublishedBlogPost,
+} from '../../utils/emdash-blog';
+
+const slug = Astro.params.slug;
+if (!slug) return Astro.rewrite('/404');
+
+const { post, isPreview } = await getPublishedBlogPost(slug);
+if (!post) return Astro.rewrite('/404');
+if (isPreview) {
+  Astro.response.headers.set('X-Robots-Tag', 'noindex,nofollow,noarchive');
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
-
-const formattedDate = post.data.pubDate.toLocaleDateString('pt-BR', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-});
-
-// BlogPosting schema for blog posts
+const articleUrl = `https://elisafontes.com.br/blog/${post.id}`;
+const imageUrl = getBlogImageUrl(post.data);
 const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": post.data.title,
-  "description": post.data.description,
-  "image": post.data.image ? `https://elisafontes.com.br${post.data.image}` : "https://elisafontes.com.br/images/profile.jpg",
-  "datePublished": post.data.pubDate.toISOString(),
-  "dateModified": post.data.pubDate.toISOString(),
-  "keywords": [post.data.category, "psicóloga Niterói", "saúde mental", "psicanálise"],
-  "author": {
-    "@type": "Person",
-    "name": "Elisa Fontes",
-    "jobTitle": "Psicóloga Clínica",
-    "url": "https://elisafontes.com.br/sobre"
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: new URL(imageUrl, 'https://elisafontes.com.br').href,
+  datePublished: post.data.publication_date,
+  dateModified: post.data.publication_date,
+  keywords: [post.data.category, 'psicóloga Niterói', 'saúde mental', 'psicanálise'],
+  author: {
+    '@type': 'Person',
+    name: 'Elisa Fontes',
+    jobTitle: 'Psicóloga Clínica',
+    url: 'https://elisafontes.com.br/sobre',
   },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Elisa Fontes - Psicóloga",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://elisafontes.com.br/images/logo.png"
-    }
+  publisher: {
+    '@type': 'Organization',
+    name: 'Elisa Fontes - Psicóloga',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://elisafontes.com.br/images/logo.png',
+    },
   },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": `https://elisafontes.com.br/blog/${post.id.replace(/\.md$/, '')}`
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': articleUrl,
   },
-  "articleSection": post.data.category,
-  "locationCreated": {
-    "@type": "Place",
-    "name": "Niterói, RJ, Brasil"
-  }
+  articleSection: post.data.category,
+  locationCreated: {
+    '@type': 'Place',
+    name: 'Niterói, RJ, Brasil',
+  },
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Início",
-      "item": "https://elisafontes.com.br/"
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Início',
+      item: 'https://elisafontes.com.br/',
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "https://elisafontes.com.br/blog"
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://elisafontes.com.br/blog',
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": post.data.title,
-      "item": `https://elisafontes.com.br/blog/${post.id.replace(/\.md$/, '')}`
-    }
-  ]
+      '@type': 'ListItem',
+      position: 3,
+      name: post.data.title,
+      item: articleUrl,
+    },
+  ],
 };
 ---
 
 <Layout
   title={`${post.data.title} | Elisa Fontes - Psicóloga`}
   description={post.data.description}
-  image={post.data.image}
+  image={imageUrl}
   schema={[articleSchema, breadcrumbSchema]}
   ogType="article"
+  noIndex={isPreview}
 >
   <Header />
 
-  <main class="bg-primary-bg px-6 md:px-12 lg:px-20 py-12">
-    <article class="max-w-3xl mx-auto">
-      <!-- Breadcrumb -->
-      <nav class="mb-8">
-        <a href="https://elisafontes.com.br/blog" class="text-text-main/70 hover:text-accent transition-colors">
+  <main class="bg-primary-bg px-6 py-12 md:px-12 lg:px-20">
+    <article class="mx-auto max-w-3xl" {...post.edit}>
+      <nav class="mb-8" aria-label="Navegação estrutural">
+        <a href="/blog" class="rounded-sm text-text-main/70 underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
           ← Voltar para o Blog
         </a>
       </nav>
 
-      <!-- Article Header -->
-      <header class="mb-8">
-        <span class="inline-block bg-card-bg text-text-main text-sm font-medium px-4 py-1 rounded-sm mb-4">
-          {post.data.category}
-        </span>
-
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading text-text-main mb-4 leading-tight">
-          {post.data.title}
-        </h1>
-
-        <p class="text-text-main/70 text-lg mb-4">
-          {post.data.description}
+      {isPreview && (
+        <p class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-sm font-medium text-amber-900">
+          Pré-visualização do Emdash — este artigo ainda não está visível ao público.
         </p>
+      )}
 
-        <div class="flex items-center gap-4 text-sm text-text-main/60">
-          <span>Por Elisa Fontes</span>
-          <span>•</span>
-          <time datetime={post.data.pubDate.toISOString()}>
-            {formattedDate}
-          </time>
+      <header class="mb-8">
+        <span class="mb-4 inline-block rounded-sm bg-card-bg px-4 py-1 text-sm font-medium text-text-main">{post.data.category}</span>
+        <h1 class="mb-4 font-heading text-3xl leading-tight text-text-main md:text-4xl lg:text-5xl" {...post.edit.title}>{post.data.title}</h1>
+        <p class="mb-4 text-lg leading-8 text-text-main/70" {...post.edit.description}>{post.data.description}</p>
+        <div class="flex flex-wrap items-center gap-3 text-sm text-text-main/60">
+          <span>Por Elisa Fontes · CRP 05/62794</span>
+          <span aria-hidden="true">•</span>
+          <time datetime={post.data.publication_date}>{formatBlogDate(post.data.publication_date)}</time>
         </div>
       </header>
 
-      <!-- Featured Image -->
-      {post.data.image && (
-        <div class="mb-10 rounded-lg overflow-hidden">
-          <img
-            src={post.data.image}
+      {getBlogImage(post.data) && (
+        <div class="mb-10 aspect-[16/9] overflow-hidden rounded-xl bg-card-bg">
+          <Image
+            image={getBlogImage(post.data)}
             alt={post.data.title}
-            class="w-full h-auto"
+            class="h-full w-full object-cover"
+            sizes="(min-width: 768px) 768px, 100vw"
+            priority
           />
         </div>
       )}
 
-      <!-- Article Content -->
-      <div class="prose prose-lg max-w-none">
-        <Content />
+      <div class="prose prose-lg max-w-none" {...post.edit.content}>
+        <PortableText value={post.data.content} />
       </div>
 
-      <!-- Author Box -->
-      <aside class="mt-12 p-6 bg-card-bg rounded-lg">
+      <aside class="mt-12 rounded-lg bg-card-bg p-6" aria-label="Sobre a autora">
         <div class="flex items-start gap-4">
           <img
             src="/images/profile.jpg"
             alt="Elisa Fontes, psicóloga clínica — autora do artigo"
-            class="w-16 h-16 rounded-full object-cover"
+            class="h-16 w-16 rounded-full object-cover"
+            width="64"
+            height="64"
+            loading="lazy"
           />
           <div>
-            <p class="font-heading text-lg text-text-main mb-1">
-              Elisa Fontes
-            </p>
-            <p class="text-sm text-text-main/70 mb-3">
-              Psicóloga Clínica | CRP 05/62794
-            </p>
-            <p class="text-sm text-text-main/70">
-              Especialista em ansiedade, autoestima e desenvolvimento pessoal.
-              Atendimento online e presencial em Niterói, RJ.
+            <p class="mb-1 font-heading text-lg text-text-main">Elisa Fontes</p>
+            <p class="mb-3 text-sm text-text-main/70">Psicóloga Clínica | CRP 05/62794</p>
+            <p class="text-sm leading-6 text-text-main/70">
+              Psicóloga clínica com abordagem em psicanálise, atendimento online e presencial em Niterói, RJ.
             </p>
           </div>
         </div>
       </aside>
 
-      <BlogCTA ctaId={`blog_${post.id.replace(/\.md$/, '')}_cta`} />
+      <BlogCTA ctaId={`blog_${post.id}_cta`} />
     </article>
   </main>
 
@@ -172,82 +162,18 @@ const breadcrumbSchema = {
 </Layout>
 
 <style is:global>
-  .prose {
-    color: var(--color-text-main);
-  }
-
-  .prose h2 {
-    font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--color-text-main);
-  }
-
-  .prose h3 {
-    font-family: var(--font-heading);
-    font-size: 1.35rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    color: var(--color-text-main);
-  }
-
-  .prose p {
-    margin-bottom: 1.25rem;
-    line-height: 1.8;
-  }
-
-  .prose ul, .prose ol {
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
-  }
-
-  .prose li {
-    margin-bottom: 0.5rem;
-    line-height: 1.7;
-  }
-
-  .prose ul li {
-    list-style-type: disc;
-  }
-
-  .prose ol li {
-    list-style-type: decimal;
-  }
-
-  .prose strong {
-    font-weight: 700;
-    color: var(--color-text-main);
-  }
-
-  .prose a {
-    color: var(--color-accent);
-    text-decoration: underline;
-    transition: opacity 0.2s;
-  }
-
-  .prose a:hover {
-    opacity: 0.8;
-  }
-
-  .prose blockquote {
-    border-left: 4px solid var(--color-accent);
-    padding-left: 1.5rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-    color: var(--color-text-main);
-    opacity: 0.9;
-  }
-
-  .prose hr {
-    border: none;
-    border-top: 1px solid var(--color-card-bg);
-    margin: 2rem 0;
-  }
-
-  .prose em {
-    font-style: italic;
-  }
+  .prose { color: var(--color-text-main); }
+  .prose h2 { margin-bottom: 1rem; margin-top: 2.5rem; color: var(--color-text-main); font-family: var(--font-heading); font-size: 1.75rem; font-weight: 600; }
+  .prose h3 { margin-bottom: 0.75rem; margin-top: 2rem; color: var(--color-text-main); font-family: var(--font-heading); font-size: 1.35rem; font-weight: 600; }
+  .prose p { margin-bottom: 1.25rem; line-height: 1.8; }
+  .prose ul, .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+  .prose li { margin-bottom: 0.5rem; line-height: 1.7; }
+  .prose ul li { list-style-type: disc; }
+  .prose ol li { list-style-type: decimal; }
+  .prose strong { color: var(--color-text-main); font-weight: 700; }
+  .prose a { color: var(--color-accent); text-decoration: underline; transition: opacity 0.2s; }
+  .prose a:hover { opacity: 0.8; }
+  .prose blockquote { margin: 1.5rem 0; border-left: 4px solid var(--color-accent); padding-left: 1.5rem; color: var(--color-text-main); font-style: italic; opacity: 0.9; }
+  .prose hr { margin: 2rem 0; border: 0; border-top: 1px solid var(--color-card-bg); }
+  .prose em { font-style: italic; }
 </style>

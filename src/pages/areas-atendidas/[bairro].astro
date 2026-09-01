@@ -2,18 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
 import { bairros, getBairrosByRegiao } from '../../data/bairros';
 import { getBairroImage } from '../../data/bairroImages';
+import { siteContact } from '../../data/site';
 import type { Bairro } from '../../data/bairros';
 
-export function getStaticPaths() {
-  return bairros.map((bairro) => ({
-    params: { bairro: bairro.slug },
-    props: { bairro },
-  }));
-}
+const bairro = bairros.find((item) => item.slug === Astro.params.bairro) as Bairro | undefined;
+if (!bairro) return Astro.rewrite('/404');
 
-const { bairro } = Astro.props as { bairro: Bairro };
 const nearbyBairros = getBairrosByRegiao(bairro.regiao).filter((b) => b.slug !== bairro.slug);
 
 const isSaoFrancisco = bairro.slug === "sao-francisco";
@@ -26,15 +23,15 @@ const locationSchema = {
   "name": "Elisa Fontes - Psicóloga em Niterói",
   "description": `Psicóloga clínica com 38 anos de experiência atendendo pacientes de ${bairro.name}, Niterói. Consultas presenciais e online.`,
   "url": `https://elisafontes.com.br/areas-atendidas/${bairro.slug}`,
-  "telephone": "+55-21-98744-9887",
-  "email": "psi.elisafontes@gmail.com",
+  "telephone": siteContact.phoneInternational,
+  "email": siteContact.email,
   "image": "https://elisafontes.com.br/images/profile.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Avenida Rui Barbosa, 29 - Sala 213, São Francisco",
-    "addressLocality": "Niterói",
-    "addressRegion": "RJ",
-    "postalCode": "24360-440",
+    "streetAddress": siteContact.streetAddress,
+    "addressLocality": siteContact.locality,
+    "addressRegion": siteContact.region,
+    "postalCode": siteContact.postalCode,
     "addressCountry": "BR"
   },
   "openingHours": ["Mo-Sa 10:00-20:00"],
@@ -106,13 +103,12 @@ const breadcrumbSchema = {
             Elisa Fontes atende pacientes de {bairro.name} com acompanhamento psicanalítico presencial e online.
             38 anos de experiência cuidando de pessoas. CRP 05/62794.
           </p>
-          <a
-            href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
-            class="inline-block bg-accent text-white px-8 py-3 rounded-sm font-medium hover:bg-accent/90 transition-colors"
-            data-whatsapp-cta={`area_${bairro.slug}_hero`}
-          >
-            Agendar consulta
-          </a>
+          <WhatsAppButton
+            label="Agendar consulta"
+            className="rounded-sm bg-accent px-8 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+            showIcon={false}
+            ctaId={`area_${bairro.slug}_hero`}
+          />
         </div>
 
         <figure class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-stone-200">
@@ -160,7 +156,7 @@ const breadcrumbSchema = {
           </p>
           <ul>
             <li>
-              <strong>Presencial</strong> — no consultório em São Francisco, Niterói (Rua Rui Barbosa, 29 - Sala 213),
+              <strong>Presencial</strong> — no consultório em São Francisco, Niterói ({siteContact.compactAddress}),
               de segunda a sábado, das 10h às 20h.
               {!isSaoFrancisco && ` ${bairro.name} tem fácil acesso a São Francisco via transporte público e carro.`}
             </li>
@@ -203,13 +199,12 @@ const breadcrumbSchema = {
           <div class="bg-white p-6 rounded-lg border border-stone-100 shadow-sm">
             <h3 class="font-heading text-lg text-text-main mb-4">Fale com Elisa</h3>
             <p class="text-sm text-text-main/70 mb-4">Atendendo pacientes de {bairro.name} e toda Niterói.</p>
-            <a
-              href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
-              class="block text-center bg-[#25D366] text-white px-4 py-3 rounded-sm font-medium hover:bg-[#1ebe5b] transition-colors text-sm mb-3"
-              data-whatsapp-cta={`area_${bairro.slug}_sidebar`}
-            >
-              Agendar pelo WhatsApp
-            </a>
+            <WhatsAppButton
+              label="Agendar pelo WhatsApp"
+              className="mb-3 w-full justify-center rounded-sm bg-[#25D366] px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1ebe5b]"
+              showIcon={false}
+              ctaId={`area_${bairro.slug}_sidebar`}
+            />
             <a href="/contato" class="block text-center border border-accent text-accent px-4 py-3 rounded-sm font-medium hover:bg-accent/5 transition-colors text-sm">
               Ver formas de contato
             </a>
@@ -218,8 +213,8 @@ const breadcrumbSchema = {
           <!-- Office Info -->
           <div class="bg-white p-6 rounded-lg border border-stone-100 shadow-sm">
             <h3 class="font-medium text-text-main mb-3">Consultório São Francisco</h3>
-            <p class="text-sm text-text-main/70 mb-1">Rua Rui Barbosa, 29 - Sala 213</p>
-            <p class="text-sm text-text-main/70 mb-1">São Francisco, Niterói - RJ</p>
+            <p class="text-sm text-text-main/70 mb-1">{siteContact.compactAddress}</p>
+            <p class="text-sm text-text-main/70 mb-1">São Francisco, {siteContact.locality} - {siteContact.region}</p>
             <p class="text-sm text-text-main/70">Seg a Sáb, 10h–20h</p>
           </div>
 

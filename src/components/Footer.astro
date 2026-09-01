@@ -1,5 +1,6 @@
 ---
 import WhatsAppButton from './WhatsAppButton.astro';
+import { siteContact } from '../data/site';
 
 const links = [
   { href: '/sobre', label: 'Sobre a Elisa' },
@@ -30,8 +31,8 @@ const links = [
     <div>
       <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-accent/80">Atendimento</h2>
       <ul class="mt-4 space-y-3 text-text-main/75">
-        <li>Rua Rui Barbosa, 29 - Sala 213</li>
-        <li>São Francisco, Niterói - RJ</li>
+        <li>{siteContact.compactAddress}</li>
+        <li>São Francisco, {siteContact.locality} - {siteContact.region}</li>
         <li>Segunda a sábado, 10h às 20h</li>
         <li>Online para todo o Brasil</li>
       </ul>

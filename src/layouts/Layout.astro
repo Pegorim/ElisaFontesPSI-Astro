@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { safeJsonLdSerialize } from 'emdash/page';
+import { siteContact } from '../data/site';
 
 interface Props {
 	title: string;
@@ -8,6 +10,7 @@ interface Props {
     schema?: object | object[];
     includeDefaultSchema?: boolean;
     ogType?: string;
+    noIndex?: boolean;
 }
 
 const {
@@ -16,11 +19,16 @@ const {
     image = "/images/profile.jpg",
     schema,
     includeDefaultSchema = false,
-    ogType = "website"
+    ogType = "website",
+    noIndex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
+const isPreviewOrEditRequest = Astro.url.searchParams.has('_preview') || Astro.url.searchParams.has('_edit');
+const isProductionHostname = Astro.url.hostname === 'elisafontes.com.br';
+const shouldNoIndex = noIndex || Astro.url.searchParams.has('_edit');
+const shouldLoadAnalytics = import.meta.env.PROD && isProductionHostname && !isPreviewOrEditRequest;
 
 const defaultSchema = {
     "@context": "https://schema.org",
@@ -32,15 +40,15 @@ const defaultSchema = {
     "medicalSpecialty": "Psychology",
     "description": "Psicóloga clínica em Niterói com 38 anos de experiência cuidando de pessoas. Atendimento presencial e online.",
     "url": "https://elisafontes.com.br",
-    "telephone": "+55-21-98744-9887",
-    "email": "psi.elisafontes@gmail.com",
+    "telephone": siteContact.phoneInternational,
+    "email": siteContact.email,
     "image": imageURL.href,
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Avenida Rui Barbosa, 29 - Sala 213, São Francisco",
-        "addressLocality": "Niterói",
-        "addressRegion": "RJ",
-        "postalCode": "24360-440",
+        "streetAddress": siteContact.streetAddress,
+        "addressLocality": siteContact.locality,
+        "addressRegion": siteContact.region,
+        "postalCode": siteContact.postalCode,
         "addressCountry": "BR"
     },
     "openingHours": ["Mo-Sa 10:00-20:00"],
@@ -74,6 +82,7 @@ const structuredData = customSchemas.length
         ? [defaultSchema, ...customSchemas]
         : customSchemas
     : defaultSchema;
+const serializedStructuredData = shouldNoIndex ? null : safeJsonLdSerialize(structuredData);
 ---
 
 <!doctype html>
@@ -104,8 +113,12 @@ const structuredData = customSchemas.length
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={imageURL} />
 
+        {shouldNoIndex && <meta name="robots" content="noindex,nofollow,noarchive" />}
+
         <!-- Structured Data -->
-        <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+        {serializedStructuredData && (
+            <script is:inline type="application/ld+json" set:html={serializedStructuredData} />
+        )}
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,7 +127,7 @@ const structuredData = customSchemas.length
 
 		<title>{title}</title>
 
-        {import.meta.env.PROD && (
+        {shouldLoadAnalytics && (
             <>
                 <!-- Google Analytics 4 (installed directly; do not duplicate in GTM) -->
                 <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-6RJEY1WCFN"></script>
@@ -128,24 +141,32 @@ const structuredData = customSchemas.length
             </>
         )}
 
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KH64XF44');</script>
-        <!-- End Google Tag Manager -->
+        {shouldLoadAnalytics && (
+            <>
+                <!-- Google Tag Manager -->
+                <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-KH64XF44');</script>
+                <!-- End Google Tag Manager -->
+            </>
+        )}
 	</head>
 	<body class="antialiased min-h-screen flex flex-col overflow-x-hidden">
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH64XF44"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+        {shouldLoadAnalytics && (
+            <>
+                <!-- Google Tag Manager (noscript) -->
+                <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH64XF44"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+                <!-- End Google Tag Manager (noscript) -->
+            </>
+        )}
 		<slot />
 
     <!-- Floating WhatsApp CTA -->
     <a
-      href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o.&utm_source=site&utm_medium=cta&utm_campaign=whatsapp"
+      href={siteContact.whatsappUrl}
       class="fixed z-50 bottom-5 right-5 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] shadow-lg flex items-center justify-center hover:bg-[#1ebe5b] transition-colors"
       aria-label="Fale com Elisa no WhatsApp"
       data-whatsapp-cta="floating_button"
@@ -160,16 +181,28 @@ const structuredData = customSchemas.length
 
         if (!(target instanceof Element)) return;
 
-        const link = target.closest('a[href*="wa.me/5521987449887"]');
+        const whatsappLink = target.closest('a[data-whatsapp-cta]');
 
-        if (!link) return;
+        if (whatsappLink) {
+          window.dataLayer.push({
+            event: 'whatsapp_cta_click',
+            cta_id: whatsappLink.dataset.whatsappCta || 'whatsapp_cta',
+            cta_text: whatsappLink.textContent.trim().replace(/\s+/g, ' '),
+            page_path: window.location.pathname,
+            cta_href: whatsappLink.href,
+          });
+          return;
+        }
+
+        const contactLink = target.closest('a[data-contact-channel]');
+
+        if (!contactLink) return;
 
         window.dataLayer.push({
-          event: 'whatsapp_cta_click',
-          cta_id: link.dataset.whatsappCta || 'whatsapp_cta',
-          cta_text: link.textContent.trim().replace(/\s+/g, ' '),
+          event: 'contact_link_click',
+          contact_channel: contactLink.dataset.contactChannel,
           page_path: window.location.pathname,
-          cta_href: link.href,
+          contact_href: contactLink.href,
         });
       });
     </script>

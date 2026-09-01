@@ -7,7 +7,7 @@ const publicationDateFormatter = new Intl.DateTimeFormat('en-US', {
   day: '2-digit',
 });
 
-function getPublicationDateKey(date: Date) {
+export function getPublicationDateKey(date: Date) {
   const parts = publicationDateFormatter.formatToParts(date);
   const year = parts.find((part) => part.type === 'year')?.value;
   const month = parts.find((part) => part.type === 'month')?.value;
@@ -16,7 +16,11 @@ function getPublicationDateKey(date: Date) {
   return `${year}-${month}-${day}`;
 }
 
+export function isPublicationDatePublic(date: Date | string, now = new Date()) {
+  const publicationDate = date instanceof Date ? date.toISOString().slice(0, 10) : date.slice(0, 10);
+  return publicationDate <= getPublicationDateKey(now);
+}
+
 export function isPublishedPost(post: CollectionEntry<'blog'>) {
-  const publicationDate = post.data.pubDate.toISOString().slice(0, 10);
-  return publicationDate <= getPublicationDateKey(new Date());
+  return isPublicationDatePublic(post.data.pubDate);
 }

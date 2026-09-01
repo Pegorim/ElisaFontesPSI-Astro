@@ -2,7 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
 import { bairros, regioes, getBairrosByRegiao } from '../../data/bairros';
+import { siteContact } from '../../data/site';
 
 const pageSchema = {
   "@context": "https://schema.org",
@@ -10,13 +12,13 @@ const pageSchema = {
   "name": "Elisa Fontes - Psicóloga em Niterói",
   "description": "Psicóloga clínica com 38 anos de experiência. Atendimento presencial em São Francisco, Niterói, e online para todo o Brasil.",
   "url": "https://elisafontes.com.br/areas-atendidas",
-  "telephone": "+55-21-98744-9887",
+  "telephone": siteContact.phoneInternational,
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Avenida Rui Barbosa, 29 - Sala 213, São Francisco",
-    "addressLocality": "Niterói",
-    "addressRegion": "RJ",
-    "postalCode": "24360-440",
+    "streetAddress": siteContact.streetAddress,
+    "addressLocality": siteContact.locality,
+    "addressRegion": siteContact.region,
+    "postalCode": siteContact.postalCode,
     "addressCountry": "BR"
   },
   "areaServed": bairros.map((b) => ({ "@type": "Place", "name": `${b.name}, Niterói` }))
@@ -43,13 +45,12 @@ const pageSchema = {
           <a href="/areas-atendidas/sao-francisco" class="text-accent underline hover:opacity-80">São Francisco</a>
           e atendimento online para todo o Brasil.
         </p>
-        <a
-          href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
-          class="inline-block bg-accent text-white px-8 py-3 rounded-sm font-medium hover:bg-accent/90 transition-colors"
-          data-whatsapp-cta="areas_index_hero"
-        >
-          Agendar consulta
-        </a>
+        <WhatsAppButton
+          label="Agendar consulta"
+          className="rounded-sm bg-accent px-8 py-3 font-medium text-white transition-colors hover:bg-accent/90"
+          showIcon={false}
+          ctaId="areas_index_hero"
+        />
       </div>
     </section>
 
@@ -60,8 +61,8 @@ const pageSchema = {
         <div class="grid md:grid-cols-2 gap-6">
           <div class="bg-white p-6 rounded-lg border border-stone-100 shadow-sm">
             <h3 class="font-medium text-text-main mb-2">Consultório São Francisco</h3>
-            <p class="text-text-main/70 text-sm mb-1">Rua Rui Barbosa, 29 - Sala 213</p>
-            <p class="text-text-main/70 text-sm mb-1">São Francisco, Niterói - RJ</p>
+            <p class="text-text-main/70 text-sm mb-1">{siteContact.compactAddress}</p>
+            <p class="text-text-main/70 text-sm mb-1">São Francisco, {siteContact.locality} - {siteContact.region}</p>
             <p class="text-text-main/70 text-sm mb-3">Segunda a sábado, 10h às 20h</p>
             <a href="/areas-atendidas/sao-francisco" class="text-accent text-sm underline hover:opacity-80">
               Ver página do bairro →

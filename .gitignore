@@ -3,6 +3,12 @@ dist/
 # generated types
 .astro/
 
+# local EmDash runtime data (the seed itself remains versioned)
+.emdash/*.db
+.emdash/*.db-*
+.emdash/migrations.json
+.emdash/uploads/
+
 # dependencies
 node_modules/
 

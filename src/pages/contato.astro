@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { siteContact } from '../data/site';
 
 // ContactPage schema
 const contactSchema = {
@@ -11,16 +13,16 @@ const contactSchema = {
   "description": "Entre em contato com Elisa Fontes. Atendimento presencial em Niterói e online para todo o Brasil.",
   "url": "https://elisafontes.com.br/contato",
   "mainEntity": {
-    "@type": "Physician",
+    "@type": "Psychologist",
     "name": "Elisa Fontes",
-    "telephone": "+55-21-98744-9887",
-    "email": "psi.elisafontes@gmail.com",
+    "telephone": siteContact.phoneInternational,
+    "email": siteContact.email,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Avenida Rui Barbosa, 29 - Sala 213, São Francisco",
-      "addressLocality": "Niterói",
-      "addressRegion": "RJ",
-      "postalCode": "24360-440",
+      "streetAddress": siteContact.streetAddress,
+      "addressLocality": siteContact.locality,
+      "addressRegion": siteContact.region,
+      "postalCode": siteContact.postalCode,
       "addressCountry": "BR"
     }
   }
@@ -53,7 +55,7 @@ const contactSchema = {
         <div class="space-y-6">
           <!-- WhatsApp -->
           <a
-            href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o.&utm_source=site&utm_medium=cta&utm_campaign=whatsapp"
+            href={siteContact.whatsappUrl}
             class="block bg-card-bg p-6 rounded-lg hover:shadow-lg transition-shadow group"
             data-whatsapp-cta="contact_card"
           >
@@ -67,15 +69,16 @@ const contactSchema = {
                 <h3 class="font-heading text-lg text-text-main group-hover:text-accent transition-colors">
                   WhatsApp
                 </h3>
-                <p class="text-text-main/70">(21) 98744-9887</p>
+                <p class="text-text-main/70">{siteContact.phoneDisplay}</p>
               </div>
             </div>
           </a>
 
           <!-- Email -->
           <a
-            href="mailto:psi.elisafontes@gmail.com"
+            href={`mailto:${siteContact.email}`}
             class="block bg-card-bg p-6 rounded-lg hover:shadow-lg transition-shadow group"
+            data-contact-channel="email"
           >
             <div class="flex items-center gap-4">
               <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
@@ -87,7 +90,7 @@ const contactSchema = {
                 <h3 class="font-heading text-lg text-text-main group-hover:text-accent transition-colors">
                   Email
                 </h3>
-                <p class="text-text-main/70">psi.elisafontes@gmail.com</p>
+                <p class="text-text-main/70">{siteContact.email}</p>
               </div>
             </div>
           </a>
@@ -105,8 +108,8 @@ const contactSchema = {
                 <h3 class="font-heading text-lg text-text-main">
                   Consultório
                 </h3>
-                <p class="text-text-main/70">Rua Rui Barbosa, 29 - Sala 213</p>
-                <p class="text-text-main/70">Niterói - RJ</p>
+                <p class="text-text-main/70">{siteContact.compactAddress}</p>
+                <p class="text-text-main/70">São Francisco, {siteContact.locality} - {siteContact.region}</p>
               </div>
             </div>
             <!-- Google Map -->
@@ -156,13 +159,12 @@ const contactSchema = {
           </p>
 
           <div class="space-y-4">
-            <a
-              href="https://wa.me/5521987449887?text=Ol%C3%A1%2C%20Elisa!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o.&utm_source=site&utm_medium=cta&utm_campaign=whatsapp"
-              class="block w-full bg-[#25D366] text-white text-center py-4 rounded-lg font-medium hover:bg-[#1ebe5b] transition-colors"
-              data-whatsapp-cta="contact_main_cta"
-            >
-              Agendar pelo WhatsApp
-            </a>
+            <WhatsAppButton
+              label="Agendar pelo WhatsApp"
+              className="w-full justify-center rounded-lg bg-[#25D366] py-4 font-medium text-white transition-colors hover:bg-[#1ebe5b]"
+              showIcon={false}
+              ctaId="contact_main_cta"
+            />
             <p class="text-center text-text-main/50 text-sm">
               Atendimento online para todo o Brasil
             </p>
